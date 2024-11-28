@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-BlIt.eot');
+    src: local('Roca One Black Italic'), local('RocaOne-BlIt'),
+        url('RocaOne-BlIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-BlIt.woff2') format('woff2'),
+        url('RocaOne-BlIt.woff') format('woff'),
+        url('RocaOne-BlIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-It.eot');
+    src: local('Roca One Italic'), local('RocaOne-It'),
+        url('RocaOne-It.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-It.woff2') format('woff2'),
+        url('RocaOne-It.woff') format('woff'),
+        url('RocaOne-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Bl.eot');
+    src: local('Roca One Black'), local('RocaOne-Bl'),
+        url('RocaOne-Bl.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Bl.woff2') format('woff2'),
+        url('RocaOne-Bl.woff') format('woff'),
+        url('RocaOne-Bl.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-LtIt.eot');
+    src: local('Roca One Light Italic'), local('RocaOne-LtIt'),
+        url('RocaOne-LtIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-LtIt.woff2') format('woff2'),
+        url('RocaOne-LtIt.woff') format('woff'),
+        url('RocaOne-LtIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-BdIt.eot');
+    src: local('Roca One Bold Italic'), local('RocaOne-BdIt'),
+        url('RocaOne-BdIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-BdIt.woff2') format('woff2'),
+        url('RocaOne-BdIt.woff') format('woff'),
+        url('RocaOne-BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Hv.eot');
+    src: local('Roca One Heavy'), local('RocaOne-Hv'),
+        url('RocaOne-Hv.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Hv.woff2') format('woff2'),
+        url('RocaOne-Hv.woff') format('woff'),
+        url('RocaOne-Hv.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Th.eot');
+    src: local('Roca One Thin'), local('RocaOne-Th'),
+        url('RocaOne-Th.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Th.woff2') format('woff2'),
+        url('RocaOne-Th.woff') format('woff'),
+        url('RocaOne-Th.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Lt.eot');
+    src: local('Roca One Light'), local('RocaOne-Lt'),
+        url('RocaOne-Lt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Lt.woff2') format('woff2'),
+        url('RocaOne-Lt.woff') format('woff'),
+        url('RocaOne-Lt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Bold.eot');
+    src: local('Roca One Bold'), local('RocaOne-Bold'),
+        url('RocaOne-Bold.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Bold.woff2') format('woff2'),
+        url('RocaOne-Bold.woff') format('woff'),
+        url('RocaOne-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-ThIt.eot');
+    src: local('Roca One Thin Italic'), local('RocaOne-ThIt'),
+        url('RocaOne-ThIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-ThIt.woff2') format('woff2'),
+        url('RocaOne-ThIt.woff') format('woff'),
+        url('RocaOne-ThIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-HvIt.eot');
+    src: local('Roca One Heavy Italic'), local('RocaOne-HvIt'),
+        url('RocaOne-HvIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-HvIt.woff2') format('woff2'),
+        url('RocaOne-HvIt.woff') format('woff'),
+        url('RocaOne-HvIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca One';
+    src: url('RocaOne-Rg.eot');
+    src: local('Roca One'), local('RocaOne-Rg'),
+        url('RocaOne-Rg.eot?#iefix') format('embedded-opentype'),
+        url('RocaOne-Rg.woff2') format('woff2'),
+        url('RocaOne-Rg.woff') format('woff'),
+        url('RocaOne-Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-BlIt.eot');
+    src: local('Roca Two Black Italic'), local('RocaTwo-BlIt'),
+        url('RocaTwo-BlIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-BlIt.woff2') format('woff2'),
+        url('RocaTwo-BlIt.woff') format('woff'),
+        url('RocaTwo-BlIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Lt.eot');
+    src: local('Roca Two Light'), local('RocaTwo-Lt'),
+        url('RocaTwo-Lt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Lt.woff2') format('woff2'),
+        url('RocaTwo-Lt.woff') format('woff'),
+        url('RocaTwo-Lt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-LtIt.eot');
+    src: local('Roca Two Light Italic'), local('RocaTwo-LtIt'),
+        url('RocaTwo-LtIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-LtIt.woff2') format('woff2'),
+        url('RocaTwo-LtIt.woff') format('woff'),
+        url('RocaTwo-LtIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Rg.eot');
+    src: local('Roca Two'), local('RocaTwo-Rg'),
+        url('RocaTwo-Rg.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Rg.woff2') format('woff2'),
+        url('RocaTwo-Rg.woff') format('woff'),
+        url('RocaTwo-Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-BdIt.eot');
+    src: local('Roca Two Bold Italic'), local('RocaTwo-BdIt'),
+        url('RocaTwo-BdIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-BdIt.woff2') format('woff2'),
+        url('RocaTwo-BdIt.woff') format('woff'),
+        url('RocaTwo-BdIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Hv.eot');
+    src: local('Roca Two Heavy'), local('RocaTwo-Hv'),
+        url('RocaTwo-Hv.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Hv.woff2') format('woff2'),
+        url('RocaTwo-Hv.woff') format('woff'),
+        url('RocaTwo-Hv.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Th.eot');
+    src: local('Roca Two Thin'), local('RocaTwo-Th'),
+        url('RocaTwo-Th.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Th.woff2') format('woff2'),
+        url('RocaTwo-Th.woff') format('woff'),
+        url('RocaTwo-Th.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-ThIt.eot');
+    src: local('Roca Two Thin Italic'), local('RocaTwo-ThIt'),
+        url('RocaTwo-ThIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-ThIt.woff2') format('woff2'),
+        url('RocaTwo-ThIt.woff') format('woff'),
+        url('RocaTwo-ThIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Bold.eot');
+    src: local('Roca Two Bold'), local('RocaTwo-Bold'),
+        url('RocaTwo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Bold.woff2') format('woff2'),
+        url('RocaTwo-Bold.woff') format('woff'),
+        url('RocaTwo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-It.eot');
+    src: local('Roca Two Italic'), local('RocaTwo-It'),
+        url('RocaTwo-It.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-It.woff2') format('woff2'),
+        url('RocaTwo-It.woff') format('woff'),
+        url('RocaTwo-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-Bl.eot');
+    src: local('Roca Two Black'), local('RocaTwo-Bl'),
+        url('RocaTwo-Bl.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-Bl.woff2') format('woff2'),
+        url('RocaTwo-Bl.woff') format('woff'),
+        url('RocaTwo-Bl.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roca Two';
+    src: url('RocaTwo-HvIt.eot');
+    src: local('Roca Two Heavy Italic'), local('RocaTwo-HvIt'),
+        url('RocaTwo-HvIt.eot?#iefix') format('embedded-opentype'),
+        url('RocaTwo-HvIt.woff2') format('woff2'),
+        url('RocaTwo-HvIt.woff') format('woff'),
+        url('RocaTwo-HvIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+

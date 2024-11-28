@@ -1,0 +1,251 @@
+/* Define global CSS variables in :root */
+:root {
+    --yellow: #f3ff00; /* Bright Yellow */
+    --wine: #440000; /* Deep Red */
+    --teal: #002127; /* Dark Teal */
+    --asty-font: 'CFAstyStd', Arial, sans-serif;
+    --roca-font: 'Roca One', Arial, sans-serif;
+}
+
+* {
+    cursor: url(images/hand-cursor.png), auto; 
+}
+
+body {
+    font-family: var(--asty-font);
+    background-color: var(--wine);
+    color: var(--yellow);
+    margin: 0;
+}
+
+h1, h2, h3, p {
+    color: var(--yellow);
+}
+
+/* PAWPRINTS */
+.pawprints {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+}
+
+.pawprint {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('images/pawprint.png') no-repeat center/contain; 
+    opacity: 0;
+    transform: translateY(50px);
+    rotate: 90deg;
+    transition: opacity 0.5s linear;
+}
+  
+
+main {
+    position: relative;
+}
+
+/* Fullscreen Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: visible; /* Initially visible */
+    z-index: 1000; /* Overlay above everything */
+    animation: hideOverlay 3s 3s forwards;
+}
+
+/* Hide the overlay after animation */
+@keyframes hideOverlay {
+    100% {
+        visibility: hidden; /* Hide the overlay after animation ends */
+    }
+}
+
+/* SVG Styling */
+.circle-mask {
+    width: 100%;
+    height: 100%;
+}
+
+/* Circle Animation */
+#reveal-circle {
+    animation: circleReveal 4s cubic-bezier(1, 0.3, 0.8, 0) forwards;
+}
+
+/* Animation for the Circle */
+@keyframes circleReveal {
+    0% {
+        r: 0; /* Start with a tiny circle */
+    }
+    100% {
+        r: 150; /* Expand the circle */
+    }
+}
+
+/* Hero container */
+.hero {
+    height: 70vh;
+    min-height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* Space between the image and text */
+    overflow: hidden;
+}
+
+/* Ensure the cat stays on top of the overlay */
+#cat {
+    position: relative;
+    z-index: 1001; /* Cat image above everything else */
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0; /* Prevent shrinking */
+    /* animation: slideInLeft 2s ease-out; */
+}
+
+/* Hero text under the overlay */
+.hero-text {
+    font-family: 'Roca One';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    animation: slideInRight 2s ease-out;
+}
+
+/* Slide-in effect for text and cat */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Apply to all sections */
+section {
+    position: relative;
+    font-size: 1.3rem;
+}
+
+.hero-text h1 {
+    font-size: 8rem;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 4rem;
+    margin: 0;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.desc {
+    padding: 20px 40px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    transform: translateX(0);
+    transition: transform 0.1s linear;
+}
+
+.marquee-content pre {
+    font-size: 4rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens 1160px wide or smaller */
+@media (max-width: 1160px) {
+    .hero {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 20px;
+    }
+
+    #cat {
+        width: 80%; /* Make the image responsive */
+        max-width: 400px; /* Ensure the image doesn't get too large */
+    }
+
+    .hero-text h1 {
+        font-size: 5rem; /* Smaller heading on small screens */
+    }
+
+    .hero-text p {
+        font-size: 2.4rem; /* Smaller text on small screens */
+    }
+
+    .marquee-content pre {
+        font-size: 3rem;
+      }
+}
+
+/* For screens smaller than 480px (very small screens like phones in portrait mode) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem; /* Even smaller heading */
+    }
+
+    .hero-text p {
+        font-size: 1.8rem; /* Even smaller text */
+    }
+
+    .marquee-content pre {
+        font-size: 1.8rem;
+      }
+}

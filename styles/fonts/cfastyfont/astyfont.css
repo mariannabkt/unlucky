@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-BlackOblique.otf") format("opentype");
+    font-weight: 900;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-BoldOblique.otf") format("opentype");
+    font-weight: 700;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-BookOblique.otf") format("opentype");
+    font-weight: 400;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Extrabold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-ExtraboldOblique.otf") format("opentype");
+    font-weight: 800;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Hairline.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-HairlineOblique.otf") format("opentype");
+    font-weight: 100;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-LightOblique.otf") format("opentype");
+    font-weight: 300;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-MediumOblique.otf") format("opentype");
+    font-weight: 500;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Thin.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-ThinOblique.otf") format("opentype");
+    font-weight: 200;
+    font-style: oblique;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-Ultra.otf") format("opentype");
+    font-weight: 950;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "CFAstyStd";
+    src: url("CFAstyStd-UltraOblique.otf") format("opentype");
+    font-weight: 950;
+    font-style: oblique;
+}
