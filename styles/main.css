@@ -46,6 +46,13 @@ main {
     position: relative;
 }
 
+/* Disable scrolling and pointer events during the entry transition */
+.no-scroll {
+    overflow: hidden; /* Prevent scrolling */
+    pointer-events: none; /* Disable user actions */
+}
+
+
 /* Fullscreen Overlay */
 .overlay {
     position: fixed;
@@ -88,14 +95,14 @@ main {
 
 /* Hero container */
 .hero {
-    height: 70vh;
     min-height: fit-content;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    gap: 20px; /* Space between the image and text */
+    margin-top: 20px;
+    gap: 0;
     overflow: hidden;
 }
 
@@ -103,7 +110,10 @@ main {
 #cat {
     position: relative;
     z-index: 1001; /* Cat image above everything else */
-    max-width: 100%;
+    width: 40%;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: cover;
     height: auto;
     flex-shrink: 0; /* Prevent shrinking */
     /* animation: slideInLeft 2s ease-out; */
@@ -111,14 +121,22 @@ main {
 
 /* Hero text under the overlay */
 .hero-text {
-    font-family: 'Roca One';
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
     animation: slideInRight 2s ease-out;
+}
+
+#date {
+    width: 50%; /* Make the image responsive */
+    max-width: 400px; /* Ensure the image doesn't get too large */
+}
+
+#unlucky {
+    width: 80%; /* Make the image responsive */
+    max-width: 700px; /* Ensure the image doesn't get too large */
 }
 
 /* Slide-in effect for text and cat */
@@ -206,46 +224,45 @@ section {
 
 /* Media Queries for Responsiveness */
 
-/* For screens 1160px wide or smaller */
-@media (max-width: 1160px) {
+/* Tablet */
+@media (max-width: 800px) {
     .hero {
         flex-direction: column; /* Stack image and text vertically */
-        padding: 20px;
+        gap: 0;
     }
 
     #cat {
+        margin-top: 20px;
         width: 80%; /* Make the image responsive */
+        max-width: 500px; /* Ensure the image doesn't get too large */
+    }
+
+    #date {
+        width: 40%; /* Make the image responsive */
         max-width: 400px; /* Ensure the image doesn't get too large */
     }
 
-    .hero-text h1 {
-        font-size: 5rem; /* Smaller heading on small screens */
-    }
-
-    .hero-text p {
-        font-size: 2.4rem; /* Smaller text on small screens */
+    #unlucky {
+        width: 80%; /* Make the image responsive */
+        max-width: 600px; /* Ensure the image doesn't get too large */
     }
 
     .marquee-content pre {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
 }
 
-/* For screens smaller than 480px (very small screens like phones in portrait mode) */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 600px) {
     .hero {
         padding: 10px;
     }
 
-    .hero-text h1 {
-        font-size: 3.5rem; /* Even smaller heading */
-    }
-
-    .hero-text p {
-        font-size: 1.8rem; /* Even smaller text */
-    }
-
     .marquee-content pre {
         font-size: 1.8rem;
-      }
+    }
+
+    .desc {
+        font-size: 1.1rem;
+    }
 }
