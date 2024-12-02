@@ -20,13 +20,7 @@
     <script src="js/pawprints.js" defer></script>
     <script src="js/marquee.js" defer></script>
     <script src="js/header.js" defer></script>
-    <script> // Go on top of the page at every reload
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 1); // Delay to ensure page load is complete
-        });
-    </script>
+    <!-- <script src="js/star.js" defer></script> -->
 </head>
 <body>
     <div class="overlay">
@@ -83,7 +77,10 @@
     </div>
 
     <section class="hero">
-        <img id="cat" src="styles/images/cat.png" alt="Unlucky cat with hand in mouth">
+        <div class="cat-container">
+            <img id="cat" src="styles/images/cat.png" alt="Unlucky cat with hand in mouth">
+            <div class="light-beam"></div><div class="circle"></div>
+        </div>
         <div class="hero-text">
             <img id="date" src="styles/images/date.png" alt="14 December">
             <img id="unlucky" src="styles/images/unlucky-curved-yellow.png" alt="Unlucky curved yellow">
@@ -105,7 +102,7 @@
 
         <!-- When and Where Section -->
         <section class="when-where desc">
-            <p>Το 6o Pre-event του TEDxAUEB θα λάβει χώρα στην <strong>Άτρακτο</strong> (Μαραθωνομάχων 8, Αθήνα) το <strong>Σάββατο 14/12/2024</strong>. Μη το χάσεις!</p>
+            <p>Το 6o Pre-event του TEDxAUEB θα λάβει χώρα στην <strong>Άτρακτο</strong> (Μαραθωνομάχων 8, Αθήνα) το <strong>Σάββατο 14/12/2024</strong>.</p>
         </section>
 
         <div class="marquee-wrapper">

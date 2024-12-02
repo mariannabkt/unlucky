@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start the circle reveal animation after a brief delay
     setTimeout(function () {
         circle.setAttribute("r", "150"); // Expand the circle to reveal the content
-    }, 1000); // Delay before starting animation
+    }, 0); // Delay before starting animation
 
     // Hide the overlay after the animation finishes (e.g., 5 seconds)
     setTimeout(function () {

@@ -15,7 +15,7 @@
     width: 100%;
     background: transparent;
     backdrop-filter: none;
-    transition: background-op 0.3s ease, backdrop-filter 0.3s ease;
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
     z-index: 1003;
     display: flex;
     justify-content: space-between;

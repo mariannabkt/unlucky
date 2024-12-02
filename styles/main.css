@@ -109,16 +109,43 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 10%;
     gap: 0;
-    overflow: hidden;
+}
+
+/* Light beam (yellow triangle with circle at the bottom) */
+.light-beam {
+    position: absolute;
+    background: var(--yellow);
+    width: 0;
+    height: 0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+    transform-origin: top center;
+    pointer-events: none; /* Prevent interaction with the beam */
+}
+
+
+/* Circle at the bottom of the beam */
+.circle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+
+
+.cat-container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
 }
 
 /* Ensure the cat stays on top of the overlay */
 #cat {
     position: relative;
     z-index: 1001; /* Cat image above everything else */
-    width: 45%;
+    width: 90%;
     max-width: 600px;
     max-height: 600px;
     object-fit: cover;
@@ -134,7 +161,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: slideInRight 2s ease-out;
+    /* animation: slideInRight 2s ease-out; */
 }
 
 #date {
@@ -316,7 +343,7 @@ section {
 .desc {
     padding: 20px 40px;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .when-where {
@@ -355,7 +382,7 @@ section {
 
     .hero {
         flex-direction: column; /* Stack image and text vertically */
-        gap: 0;
+        gap: 15px;
     }
 
     #cat {
