@@ -130,7 +130,7 @@
     /* Overlay Navigation */
     .overlay-nav ul {
     list-style: none;
-    padding: 0;
+    padding: 50px 20px;
     text-align: center;
     }
     
@@ -149,7 +149,7 @@
     }
     
     /* Media Queries for Tablet and Mobile */
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
         .menu {
             display: none; /* Hide the default menu on smaller screens */
         }
@@ -264,7 +264,7 @@
     }
     
     /* Ensure responsive layout */
-    @media (max-width: 768px) {
+    @media (max-width: 668px) {
         .top-footer {
             flex-direction: column;
             align-items: center;
