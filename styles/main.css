@@ -4,7 +4,7 @@
     --wine: #440000; /* Deep Red */
     --teal: #002127; /* Dark Teal */
     --asty-font: 'CFAstyStd', Arial, sans-serif;
-    --roca-font: 'Roca One', Arial, sans-serif;
+    --roca-font: 'Roca One', 'CFAstyStd', Arial, sans-serif;
 }
 
 * {
@@ -497,13 +497,21 @@ section {
   
   .tab-content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    flex-wrap: wrap; /* Allows logos to wrap to the next row if needed */
+    min-height: 200px; /* Optional: Ensures consistent container height */
+    text-align: center; /* Optional: Centers text (if any) */
   }
   
   .tab-pane img {
-    width: 150px;
-    height: auto;
+    max-width: 200px;
+    height: 150px;
     margin: 10px;
+    object-fit: contain;
   }
   
+
+  .desc h2 {
+    font-family: 'Roca One';
+  }
