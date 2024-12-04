@@ -209,7 +209,6 @@ button {
     background: transparent;
     padding: 0;
     font-family: var(--asty-font);
-    cursor: pointer;
 }
 
 /* Button styles */
@@ -352,10 +351,36 @@ section {
 }
 
 .schedule {
-    padding: 20px 40px;
+    font-family: Arial, sans-serif;
     margin: 20px auto;
-    max-width: 900px;
-}
+    text-align: left;
+    max-width: 800px;
+  }
+  
+  .schedule h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .schedule table {
+    width: 100%;
+    border-collapse: collapse; /* Removes default table spacing */
+  }
+  
+  .schedule td {
+    padding: 10px 15px;
+    vertical-align: top;
+  }
+  
+  .schedule td:first-child {
+    font-weight: bold;
+    width: 30%; /* Ensures the time column stays narrow */
+  }
+  
+  .schedule td:last-child {
+    width: 70%; /* Ensures the description column is wider */
+  }
+  
 
 .marquee-wrapper {
     width: 100%;
@@ -444,3 +469,41 @@ section {
         font-size: 1.1rem;
     }
 }
+
+#sponsors-section {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .tab {
+    background-color: var(--teal);
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 50px;
+    color: var(--yellow);
+    transition: transform 0.3s ease;
+    font-size: 1.3rem;
+  }
+  
+  .tab:hover {
+    transform: translateY(-8px);
+  }
+  
+  .tab-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .tab-pane img {
+    width: 150px;
+    height: auto;
+    margin: 10px;
+  }
+  

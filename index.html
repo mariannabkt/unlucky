@@ -28,7 +28,8 @@
     <script src="js/pawprints.js" defer></script>
     <script src="js/marquee.js" defer></script>
     <script src="js/header.js" defer></script>
-    <!-- <script src="js/star.js" defer></script> -->
+    <script src="js/star.js" defer></script>
+    <script src="js/sponsors.js" defer></script>
 </head>
 <body>
     <div class="overlay">
@@ -160,28 +161,38 @@
 
         <section class="schedule">
             <h1>Πρόγραμμα Εκδήλωσης</h1>
-            
-            <h2>10:30 - 11:30</h2>
-            <p>Καλοσώρισμα και ice breaker</p>
-            
-            <h2>11:30 - 12:00</h2>
-            <p>Coffee Break</p>
-            
-            <h2>12:00 - 14:00 </h2>
-            <p>ImproVibe and Lifeline</p>
-            
-            <h2>14:00 - 15:00</h2>
-            <p>Lunch Break</p>
-            
-            <h2>15:00 - 17:00</h2>
-            <p>Two Truths and One Lie & Corporate Game</p>
-            
-            <h2>17:00 - 17:30</h2>
-            <p>Coffee Break</p>
-            
-            <h2>17:30 - 18:30</h2>
-            <p>Q&A με την Σχεδία</p>
-        </section>
+            <table>
+              <tr>
+                <td>10:30 - 11:30</td>
+                <td>Καλοσώρισμα και ice breaker</td>
+              </tr>
+              <tr>
+                <td>11:30 - 12:00</td>
+                <td>Coffee Break</td>
+              </tr>
+              <tr>
+                <td>12:00 - 14:00</td>
+                <td>ImproVibe and Lifeline</td>
+              </tr>
+              <tr>
+                <td>14:00 - 15:00</td>
+                <td>Lunch Break</td>
+              </tr>
+              <tr>
+                <td>15:00 - 17:00</td>
+                <td>Two Truths and One Lie & Corporate Game</td>
+              </tr>
+              <tr>
+                <td>17:00 - 17:30</td>
+                <td>Coffee Break</td>
+              </tr>
+              <tr>
+                <td>17:30 - 18:30</td>
+                <td>Q&A με την Σχεδία</td>
+              </tr>
+            </table>
+          </section>
+          
 
         <!-- Talks Section -->
         <section class="talks desc">
@@ -216,6 +227,33 @@
                 </div>
             </div>
         </section>
+
+        <div id="sponsors-section">
+            <div class="tabs">
+              <button class="tab" onclick="switchTab('in-kind')">IN KIND</button>
+              <button class="tab" onclick="switchTab('sponsors')">SPONSORS</button>
+              <button class="tab" onclick="switchTab('media-partners')">MEDIA PARTNERS</button>
+              <button class="tab" onclick="switchTab('community')">COMMUNITY</button>
+            </div>
+            
+            <div class="tab-content">
+              <div id="in-kind" class="tab-pane">
+                <img src="path-to-logo1.png" alt="Sponsor 1">
+                <img src="path-to-logo2.png" alt="Sponsor 2">
+              </div>
+              <div id="sponsors" class="tab-pane" style="display: none;">
+                <img src="path-to-logo3.png" alt="Sponsor 3">
+                <img src="path-to-logo4.png" alt="Sponsor 4">
+              </div>
+              <div id="media-partners" class="tab-pane" style="display: none;">
+                <img src="path-to-logo5.png" alt="Media Partner 1">
+              </div>
+              <div id="community" class="tab-pane" style="display: none;">
+                <img src="path-to-logo6.png" alt="Community Partner 1">
+              </div>
+            </div>
+        </div>
+          
 
     </main>
     
