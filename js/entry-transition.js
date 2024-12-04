@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide the overlay after the animation finishes (e.g., 5 seconds)
     setTimeout(function () {
         document.querySelector(".overlay").classList.add("hide"); // Add hide class to overlay
-    }, 0); // Wait for the animation to finish before hiding
+    }, 5000); // Wait for the animation to finish before hiding
 
     // Unlock scroll after the animation ends
     setTimeout(function () {
         document.body.style.overflow = 'auto'; // Enable scroll after animation ends
-    }, 0); // Match this with your animation duration
+    }, 5000); // Match this with your animation duration
 
     // Adjust circle position on window resize
     window.addEventListener('resize', updateCirclePosition);

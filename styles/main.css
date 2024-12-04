@@ -81,7 +81,7 @@ main {
 
 /* Circle Animation */
 #reveal-circle {
-    animation: circleReveal 0s cubic-bezier(1, 0.3, 0.8, 0) forwards;
+    animation: circleReveal 5s cubic-bezier(1, 0.3, 0.8, 0) forwards;
 }
 
 /* Animation for the Circle */
@@ -339,6 +339,10 @@ section {
     }
 }
 
+.map-link {
+    color: var(--yellow);
+}
+
 .desc {
     padding: 20px 40px;
     margin: 20px auto;
@@ -352,9 +356,10 @@ section {
 
 .schedule {
     font-family: Arial, sans-serif;
+    padding: 20px 40px;
     margin: 20px auto;
     text-align: left;
-    max-width: 800px;
+    max-width: 900px;
   }
   
   .schedule h1 {
