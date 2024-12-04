@@ -81,7 +81,7 @@ main {
 
 /* Circle Animation */
 #reveal-circle {
-    animation: circleReveal 4s cubic-bezier(1, 0.3, 0.8, 0) forwards;
+    animation: circleReveal 0s cubic-bezier(1, 0.3, 0.8, 0) forwards;
 }
 
 /* Animation for the Circle */
@@ -351,6 +351,12 @@ section {
     text-align: center;
 }
 
+.schedule {
+    padding: 20px 40px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
 .marquee-wrapper {
     width: 100%;
     overflow: hidden;
@@ -365,6 +371,11 @@ section {
     position: relative;
     transform: translateX(0);
     transition: transform 0.1s linear;
+}
+
+#host {
+    max-width: 900px;
+    max-height: 400px;
 }
 
 .marquee-content pre {

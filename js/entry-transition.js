@@ -37,17 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Start the circle reveal animation after a brief delay
     setTimeout(function () {
         circle.setAttribute("r", "150"); // Expand the circle to reveal the content
-    }, 0); // Delay before starting animation
+    }, 1); // Delay before starting animation
 
     // Hide the overlay after the animation finishes (e.g., 5 seconds)
     setTimeout(function () {
         document.querySelector(".overlay").classList.add("hide"); // Add hide class to overlay
-    }, 5000); // Wait for the animation to finish before hiding
+    }, 0); // Wait for the animation to finish before hiding
 
     // Unlock scroll after the animation ends
     setTimeout(function () {
         document.body.style.overflow = 'auto'; // Enable scroll after animation ends
-    }, 5000); // Match this with your animation duration
+    }, 0); // Match this with your animation duration
 
     // Adjust circle position on window resize
     window.addEventListener('resize', updateCirclePosition);
