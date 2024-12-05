@@ -1,64 +1,51 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    const cat = document.getElementById('cat');
     const star = document.querySelector('.star');
-    const cat = document.querySelector('#cat');
     const lightBeam = document.querySelector('.light-beam');
     const circle = document.querySelector('.circle');
 
-    function updateLightBeamPosition() {
-        // Get the position of the star and cat
-        const starRect = star.getBoundingClientRect();
+    function updateLightBeam() {
+        // Get positions of the cat and star relative to the document
         const catRect = cat.getBoundingClientRect();
+        const starRect = star.getBoundingClientRect();
+        const lightBeamRect = lightBeam.getBoundingClientRect();
+        const circleRect = lightBeam.getBoundingClientRect();
 
-        // Get the center of the star and the bottom center of the cat (legs)
-        const starCenter = {
-            x: starRect.left + starRect.width / 2,
-            y: starRect.top + starRect.height / 2
-        };
+        // Calculate the center of the cat and the star
+        const catCenterX = catRect.left + catRect.width / 2;
+        const catBottom = catRect.bottom; 
+        const starCenterX = starRect.left + starRect.width / 2;
+        const starCenterY = starRect.top + starRect.height / 2; 
 
-        const catLegs = {
-            x: catRect.left + catRect.width / 2,
-            y: catRect.bottom // Bottom center of the cat
-        };
+        // Calculate the diagonal distance between the cat and the star
+        const distanceX = catCenterX - starCenterX;
+        const distanceY = catBottom - starCenterY;
+        const diagonalDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-        // Introduce a horizontal offset for the star's misalignment
-        const starHorizontalOffset = 15; // Adjust this value as needed
-        const adjustedStarCenter = {
-            x: starCenter.x + starHorizontalOffset,
-            y: starCenter.y
-        };
+        // Update light beam size and position
+        lightBeam.style.height = `${diagonalDistance}px`; // Set the diagonal distance as the height
+        lightBeam.style.width = `${catRect.width}px`; // Set the width of the beam based on the cat's width
 
-        // Calculate the distance and angle between the adjusted star center and the cat's bottom
-        const dx = catLegs.x - adjustedStarCenter.x;
-        const dy = catLegs.y - adjustedStarCenter.y;
-        const distance = Math.sqrt(dx * dx + dy * dy); // Pythagorean theorem
-        const angle = Math.atan2(dy, dx);
+        const topX = Math.abs(lightBeamRect.left - starCenterX);
 
-        // Position and shape the light beam
-        lightBeam.style.position = 'absolute';
-        lightBeam.style.left = `${adjustedStarCenter.x}px`;
-        lightBeam.style.top = `${adjustedStarCenter.y}px`;
-
-        const beamWidth = 20; // Beam's base width
-        const beamHeight = distance - circle.offsetHeight / 2; // Adjust height so the triangle ends above the circle
-
-        lightBeam.style.width = `${beamWidth}px`;
-        lightBeam.style.height = `${beamHeight}px`;
-        lightBeam.style.background = 'var(--yellow)';
-        lightBeam.style.transform = `rotate(${angle}rad)`;
-        lightBeam.style.transformOrigin = 'top center';
-        lightBeam.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+        // Update the polygon clip-path with dynamic points
+        lightBeam.style.clipPath = `polygon(
+            ${topX}px 0%, 
+            0% 100%, 
+            100% 100%
+        )`;
 
         // Position the circle at the bottom of the beam
         const circleSize = catRect.width; // Circle size relative to cat width
         circle.style.width = `${circleSize}px`;
         circle.style.height = `${circleSize / 4}px`;
-        circle.style.position = 'absolute';
-        circle.style.top = `${catLegs.y - circle.offsetHeight}px`;
+        circle.style.bottom = `${-circle.offsetHeight / 2}px`;
     }
 
-    // Call the update function to position the beam
-    updateLightBeamPosition();
+    // Update the light beam whenever the page is resized or scrolled
+    window.addEventListener('resize', updateLightBeam);
+    window.addEventListener('scroll', updateLightBeam);
 
-    // Add event listener to adjust the beam dynamically on window resize
-    window.addEventListener('resize', updateLightBeamPosition);
+    // Initial update
+    updateLightBeam();
 });

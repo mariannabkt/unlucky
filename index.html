@@ -20,16 +20,10 @@
     <script src="js/pawprints.js" defer></script>
     <script src="js/marquee.js" defer></script>
     <script src="js/header.js" defer></script>
-    <!-- <script src="js/star.js" defer></script> -->
+    <script src="js/star.js" defer></script>
     <script src="js/sponsors.js" defer></script>
-    <script> // Go on top of the page at every reload
-        window.addEventListener("load", function () {
-            setTimeout(function () {
-                window.scrollTo(0, 0); // Scroll to the top of the page
-            }, 100); // Slight delay to ensure layout updates are complete
-        });
-    </script>
     <script src="js/entry-transition.js"></script>
+
 </head>
 <body>
     <div class="overlay">
@@ -86,8 +80,10 @@
 
     <section class="hero">
         <div class="cat-container">
+            
+            <div class="circle"></div>
             <img id="cat" src="styles/images/cat.png" alt="Unlucky cat with hand in mouth">
-            <div class="light-beam"></div><div class="circle"></div>
+            <div class="light-beam"></div>
         </div>
         <div class="hero-text">
             <img id="date" src="styles/images/date.png" alt="14 December">
@@ -228,7 +224,7 @@
             </div>
         </section>
 
-        <div id="sponsors-section">
+        <!-- <div id="sponsors-section">
             <div class="tabs">
               <button class="tab" onclick="switchTab('in-kind')">IN KIND</button>
               <button class="tab" onclick="switchTab('sponsors')">SPONSORS</button>
@@ -257,7 +253,7 @@
                 <img src="path-to-logo6.png" alt="Community Partner 1">
               </div>
             </div>
-        </div>
+        </div> -->
           
 
     </main>

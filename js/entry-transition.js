@@ -1,57 +1,73 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Function to map viewport coordinates to SVG coordinates
+function viewportToSVG(svgElement, x, y) {
+    const point = svgElement.createSVGPoint(); // Create a point in the SVG coordinate system
+    point.x = x;
+    point.y = y;
+    const transformedPoint = point.matrixTransform(svgElement.getScreenCTM().inverse());
+    return { x: transformedPoint.x, y: transformedPoint.y };
+}
+
+// Function to update the circle's position based on the cat's position
+function updateCirclePosition() {
     const circle = document.querySelector("#reveal-circle");
     const cat = document.querySelector("#cat");
     const svg = document.querySelector(".circle-mask");
 
-    // Lock scrolling on the body until animation finishes
-    document.body.style.overflow = 'hidden';
+    const catRect = cat.getBoundingClientRect(); // Get the cat's position relative to the viewport
 
-    // Function to map viewport coordinates to SVG coordinates
-    function viewportToSVG(svgElement, x, y) {
-        const point = svgElement.createSVGPoint(); // Create a point in the SVG coordinate system
-        point.x = x;
-        point.y = y;
-        const transformedPoint = point.matrixTransform(svgElement.getScreenCTM().inverse());
-        return { x: transformedPoint.x, y: transformedPoint.y };
-    }
+    // Center of the cat horizontally and vertically (relative to viewport)
+    const catCenterX = catRect.left + catRect.width / 2;
+    const catCenterY = catRect.top + catRect.height / 2;
 
-    // Function to update the circle's position based on the cat's position
-    function updateCirclePosition() {
-        const catRect = cat.getBoundingClientRect(); // Get the cat's position relative to the viewport
+    // Transform viewport coordinates to SVG coordinates
+    const svgCoords = viewportToSVG(svg, catCenterX, catCenterY);
 
-        // Center of the cat horizontally and vertically (relative to viewport)
-        const catCenterX = catRect.left + catRect.width / 2;
-        const catCenterY = catRect.top + catRect.height / 2;
+    // Update the circle's position
+    circle.setAttribute("cx", svgCoords.x);
+    circle.setAttribute("cy", svgCoords.y);
+}
 
-        // Transform viewport coordinates to SVG coordinates
-        const svgCoords = viewportToSVG(svg, catCenterX, catCenterY);
+// Function to start the reveal animation
+function startRevealAnimation() {
+    const circle = document.querySelector("#reveal-circle");
 
-        // Update the circle's position
-        circle.setAttribute("cx", svgCoords.x);
-        circle.setAttribute("cy", svgCoords.y);
-    }
-    // Update the circle position when the page is loaded
-    updateCirclePosition();
-
-    // Start the circle reveal animation after a brief delay
+    // Start the circle reveal animation
     setTimeout(function () {
         circle.setAttribute("r", "150"); // Expand the circle to reveal the content
-    }, 0); // Delay before starting animation
+    }, 100); // Slight delay to ensure smooth animation
 
-    // Hide the overlay after the animation finishes (e.g., 5 seconds)
+    // Hide the overlay after the animation finishes
     setTimeout(function () {
         document.querySelector(".overlay").classList.add("hide"); // Add hide class to overlay
     }, 5000); // Wait for the animation to finish before hiding
 
     // Unlock scroll after the animation ends
     setTimeout(function () {
-        document.body.style.overflow = 'auto'; // Enable scroll after animation ends
+        document.body.style.overflow = "auto"; // Enable scroll after animation ends
     }, 5000); // Match this with your animation duration
+}
+
+// Scroll to the top of the page and update the circle position
+function scrollToTopAndSetup() {
+
+    setTimeout(() => {
+        // Force scroll to the top
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+ 
+        // Update circle position and start animations
+        updateCirclePosition();
+        startRevealAnimation();
+    }, 50); // Slight delay for layout updates
+}
+
+// Ensure the page starts at the top and positions the circle correctly
+window.addEventListener("load", scrollToTopAndSetup);
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Lock scrolling on the body until animation finishes
+    document.body.style.overflow = "hidden";
 
     // Adjust circle position on window resize
-    window.addEventListener('resize', updateCirclePosition);
-    window.addEventListener('load', function () {
-        window.scrollTo(0, 0);
-        updateCirclePosition();
-    });
+    window.addEventListener("resize", updateCirclePosition);
 });

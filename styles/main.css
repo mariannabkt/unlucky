@@ -98,7 +98,7 @@ main {
     max-height: 150px;
     position: absolute;
     top: -20px;
-    right: 50%;
+    right: 51%;
 }
 
 /* Hero container */
@@ -114,16 +114,33 @@ main {
 }
 
 /* Light beam (yellow triangle with circle at the bottom) */
-.light-beam {
+/* .light-beam {
     position: absolute;
-    background: var(--yellow);
+    background: rgba(255, 255, 0, 0.5);
     width: 0;
     height: 0;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     transform-origin: top center;
-    pointer-events: none; /* Prevent interaction with the beam */
+    pointer-events: none;
+} */
+/* Light beam */
+/* .light-beam {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 300px solid rgba(255, 255, 0, 0.5);
+    pointer-events: none;
+} */
+.light-beam {
+    position: absolute;
+    width: 0; /* No explicit width */
+    height: 0; /* No height, just clip-path */
+    background-color: rgba(255, 255, 0, 0.5); /* Triangle color */
+    pointer-events: none; /* Prevent the beam from blocking interactions */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Default is an isosceles triangle */
 }
-
 
 /* Circle at the bottom of the beam */
 .circle {
@@ -136,15 +153,17 @@ main {
 
 
 .cat-container {
+    position: relative;
     display: flex;
     align-items: end;
     justify-content: center;
+    z-index: 1001; /* Cat image above everything else */
 }
 
 /* Ensure the cat stays on top of the overlay */
 #cat {
     position: relative;
-    z-index: 1001; /* Cat image above everything else */
+    
     width: 90%;
     max-width: 600px;
     max-height: 600px;
