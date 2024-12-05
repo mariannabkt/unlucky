@@ -30,14 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
         circle.setAttribute("cx", svgCoords.x);
         circle.setAttribute("cy", svgCoords.y);
     }
-
     // Update the circle position when the page is loaded
     updateCirclePosition();
 
     // Start the circle reveal animation after a brief delay
     setTimeout(function () {
         circle.setAttribute("r", "150"); // Expand the circle to reveal the content
-    }, 1); // Delay before starting animation
+    }, 0); // Delay before starting animation
 
     // Hide the overlay after the animation finishes (e.g., 5 seconds)
     setTimeout(function () {
@@ -51,4 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Adjust circle position on window resize
     window.addEventListener('resize', updateCirclePosition);
+    window.addEventListener('load', function () {
+        window.scrollTo(0, 0);
+        updateCirclePosition();
+    });
 });

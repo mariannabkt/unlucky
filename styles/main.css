@@ -63,7 +63,7 @@ main {
     height: 100vh;
     visibility: visible; /* Initially visible */
     z-index: 1000; /* Overlay above everything */
-    animation: hideOverlay 3s 3s forwards;
+    animation: hideOverlay 0s 5s forwards;
 }
 
 /* Hide the overlay after animation */
@@ -476,8 +476,9 @@ section {
 }
 
 #sponsors-section {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    padding: 20px 40px;
+    margin: 20px auto;
+    max-width: 1100px;
   }
   
   .tabs {
@@ -510,9 +511,9 @@ section {
   }
   
   .tab-pane img {
-    max-width: 200px;
-    height: 150px;
-    margin: 10px;
+    max-width: 150px;
+    height: 100px;
+    margin: 15px;
     object-fit: contain;
   }
   
