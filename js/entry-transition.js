@@ -36,15 +36,10 @@ function startRevealAnimation() {
         circle.setAttribute("r", "150"); // Expand the circle to reveal the content
     }, 100); // Slight delay to ensure smooth animation
 
-    // Hide the overlay after the animation finishes
-    setTimeout(function () {
-        document.querySelector(".overlay").classList.add("hide"); // Add hide class to overlay
-    }, 5000); // Wait for the animation to finish before hiding
-
     // Unlock scroll after the animation ends
     setTimeout(function () {
         document.body.style.overflow = "auto"; // Enable scroll after animation ends
-    }, 5000); // Match this with your animation duration
+    }, 9000); // Match this with your animation duration
 }
 
 // Scroll to the top of the page and update the circle position

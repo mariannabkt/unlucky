@@ -61,15 +61,23 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    visibility: visible; /* Initially visible */
+    background-color: black;
+    opacity: 1; /* Initially visible */
     z-index: 1000; /* Overlay above everything */
-    animation: hideOverlay 0s 5s forwards;
+    animation: hideBackground 0s 4s forwards, hideOverlay 0s 9s forwards;
 }
 
 /* Hide the overlay after animation */
 @keyframes hideOverlay {
     100% {
         visibility: hidden; /* Hide the overlay after animation ends */
+    }
+}
+
+/* Hide background */
+@keyframes hideBackground {
+    100% {
+        background-color: transparent;
     }
 }
 
@@ -82,6 +90,7 @@ main {
 /* Circle Animation */
 #reveal-circle {
     animation: circleReveal 5s cubic-bezier(1, 0.3, 0.8, 0) forwards;
+    animation-delay: 4s;
 }
 
 /* Animation for the Circle */
@@ -114,32 +123,27 @@ main {
 }
 
 /* Light beam (yellow triangle with circle at the bottom) */
-/* .light-beam {
-    position: absolute;
-    background: rgba(255, 255, 0, 0.5);
-    width: 0;
-    height: 0;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    transform-origin: top center;
-    pointer-events: none;
-} */
-/* Light beam */
-/* .light-beam {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 300px solid rgba(255, 255, 0, 0.5);
-    pointer-events: none;
-} */
 .light-beam {
     position: absolute;
+    opacity: 0;
     width: 0; /* No explicit width */
     height: 0; /* No height, just clip-path */
-    background-color: rgba(255, 255, 0, 0.5); /* Triangle color */
+    background-color: rgba(255, 255, 0, 0.3); /* Triangle color */
     pointer-events: none; /* Prevent the beam from blocking interactions */
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Default is an isosceles triangle */
+    animation: revealOpacity 2s ease-in-out 2.5s forwards, slowBlink 4s ease-in-out 4s infinite;
+}
+
+@keyframes slowBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Circle at the bottom of the beam */
@@ -147,10 +151,20 @@ main {
     position: absolute;
     width: 0;
     height: 0;
+    opacity: 0;
     background-color: var(--yellow);
     border-radius: 50%;
+    animation: revealOpacity 3s ease-in-out 1s forwards; 
 }
 
+@keyframes revealOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .cat-container {
     position: relative;
@@ -163,7 +177,6 @@ main {
 /* Ensure the cat stays on top of the overlay */
 #cat {
     position: relative;
-    
     width: 90%;
     max-width: 600px;
     max-height: 600px;
@@ -374,7 +387,6 @@ section {
 }
 
 .schedule {
-    font-family: Arial, sans-serif;
     padding: 20px 40px;
     margin: 20px auto;
     text-align: left;
@@ -428,7 +440,7 @@ section {
 }
 
 .marquee-content pre {
-    font-size: 4rem;
+    font-size: 4em;
 }
 
 /* Media Queries for Responsiveness */
@@ -439,14 +451,14 @@ section {
         right: 20%;
     }
 
-
     .hero {
         flex-direction: column; /* Stack image and text vertically */
         gap: 15px;
+        margin-top: 15%;
     }
 
     #cat {
-        margin-top: 20px;
+        margin-top: 40px;
         width: 80%; /* Make the image responsive */
         max-width: 500px; /* Ensure the image doesn't get too large */
     }
@@ -454,6 +466,7 @@ section {
     #date {
         width: 40%; /* Make the image responsive */
         max-width: 400px; /* Ensure the image doesn't get too large */
+        margin-top: 15%;
     }
 
     #unlucky {
@@ -463,6 +476,14 @@ section {
 
     .marquee-content pre {
         font-size: 2.5rem;
+    }
+
+    .schedule td:first-child {
+        width: 40%;
+    }
+      
+      .schedule td:last-child {
+        width: 60%;
     }
 }
 
@@ -491,29 +512,51 @@ section {
 
     .desc {
         font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .when-where {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .schedule table {
+        font-size: 1.1rem;
+    }
+
+    .schedule td:first-child {
+        width: 45%;
+    }
+      
+      .schedule td:last-child {
+        width: 55%;
     }
 }
 
 #sponsors-section {
-    padding: 20px 40px;
+    padding: 20px 20px;
     margin: 20px auto;
-    max-width: 1100px;
+    max-width: 900px;
   }
   
   .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap tabs to the next line on small screens */
+    gap: 10px; /* Add space between tabs */
+    margin-bottom: 15px;
   }
   
   .tab {
     background-color: var(--teal);
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 10px 15px;
+    margin: 0;
     border-radius: 50px;
     color: var(--yellow);
     transition: transform 0.3s ease;
-    font-size: 1.3rem;
+    font-size: 1.2rem; 
+    text-align: center;
   }
   
   .tab:hover {
@@ -522,21 +565,55 @@ section {
   
   .tab-content {
     display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Centers items vertically */
-    flex-wrap: wrap; /* Allows logos to wrap to the next row if needed */
-    min-height: 200px; /* Optional: Ensures consistent container height */
-    text-align: center; /* Optional: Centers text (if any) */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  .tab-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
   }
   
   .tab-pane img {
     max-width: 150px;
-    height: 100px;
+    height: auto;
     margin: 15px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 800px) {
+    .tab {
+      padding: 8px 12px;
+      font-size: 1.1rem;
+    }
+  
+    .tab-pane img {
+      max-width: 120px; /* Scale down logos for smaller screens */
+      height: auto;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tab {
+        font-size: 1rem;
+    }
+
+    .tab-pane img {
+      max-width: 100px; /* Further scale down logos */
+      margin: 8px;
+    }
   }
   
 
-  .desc h2 {
+  .title {
     font-family: 'Roca One';
   }

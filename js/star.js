@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         circle.style.height = `${circleSize / 4}px`;
         circle.style.bottom = `${-circle.offsetHeight / 2}px`;
     }
-
+    window.addEventListener('load', updateLightBeam);
     // Update the light beam whenever the page is resized or scrolled
     window.addEventListener('resize', updateLightBeam);
     window.addEventListener('scroll', updateLightBeam);
