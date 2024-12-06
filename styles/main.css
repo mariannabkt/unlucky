@@ -122,104 +122,6 @@ main {
     gap: 0;
 }
 
-/* Light beam (yellow triangle with circle at the bottom) */
-.light-beam {
-    position: absolute;
-    opacity: 0;
-    width: 0; /* No explicit width */
-    height: 0; /* No height, just clip-path */
-    background-color: rgba(255, 255, 0, 0.3); /* Triangle color */
-    pointer-events: none; /* Prevent the beam from blocking interactions */
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Default is an isosceles triangle */
-    animation: revealOpacity 2s ease-in-out 2.5s forwards, slowBlink 4s ease-in-out 4s infinite;
-}
-
-@keyframes slowBlink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Circle at the bottom of the beam */
-.circle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    background-color: var(--yellow);
-    border-radius: 50%;
-    animation: revealOpacity 3s ease-in-out 1s forwards; 
-}
-
-@keyframes revealOpacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.cat-container {
-    position: relative;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    z-index: 1001; /* Cat image above everything else */
-}
-
-/* Ensure the cat stays on top of the overlay */
-#cat {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    max-height: 600px;
-    object-fit: cover;
-    height: auto;
-    flex-shrink: 0; /* Prevent shrinking */
-    /* animation: slideInLeft 2s ease-out; */
-}
-
-#eyes {
-    position: absolute;
-    transform-origin: center center;
-    top: 0;
-    right: 0;
-    pointer-events: none;
-    max-width: 95px;
-    animation: moveEyes 7s infinite linear;
-}
-
-@keyframes moveEyes {
-    0% {
-        transform: translateX(0px); /* Start at the left limit */
-    }
-    16.67% {
-        transform: translateX(var(--left-limit)); /* Move to neutral position */
-    }
-    33.33% {
-        transform: translateX(0px); /* Move to a slight right position */
-    }
-    50% {
-        transform: translateX(var(--middle-limit)); /* Move to the far right limit */
-    }
-    66.67% {
-        transform: translateX(var(--right-limit)); /* Move back to a slight right position */
-    }
-    83.33% {
-        transform: translateX(var(--middle-limit)); /* Move back to neutral position */
-    }
-    100% {
-        transform: translateX(0px); /* Move back to the left limit */
-    }
-}
-
 
 /* Hero text under the overlay */
 .hero-text {
@@ -258,114 +160,6 @@ main {
     to {
         transform: translateX(0);
     }
-}
-
-
-/* Button container */
-#btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-button {
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border: 0;
-    background: transparent;
-    padding: 0;
-    font-family: var(--asty-font);
-}
-
-/* Button styles */
-.btn {
-    width: 400px;
-    height: auto;
-    margin-top: 40px;
-}
-
-.btn .btn-circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 50px;
-    height: 50px;
-    background: var(--yellow);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    overflow: hidden; /* Ensures smooth hover animations */
-}
-
-.btn .btn-circle i {
-    font-size: 1.2rem;
-    color: var(--wine);
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    opacity: 1;
-    transform: translateX(20px);
-}
-
-.btn .btn-circle i.fa-arrow-right {
-    opacity: 0;
-    transform: translateX(20px);
-}
-
-/* Button text */
-button.btn .btn-text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 10px 0;
-    margin: 0 35px 0 65px;
-    color: var(--yellow);
-    font-size: 2rem;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-}
-
-button.btn .btn-text::after {
-    color: var(--yellow);
-    content: '';
-    display: block;
-    width: 100%; /* Start with 0 width */
-    height: 2px; /* Thickness of the line */
-    background-color: var(--yellow); /* Line color */
-    margin: 5px auto 0; /* Space between text and line */
-    transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-}
-
-/* Hover styles */
-.btn:hover .btn-circle, .btn:active .btn-circle {
-    width: 100%;
-}
-
-.btn:hover .btn-circle i.fa-chevron-right,
-.btn:active .btn-circle i.fa-chevron-right {
-    opacity: 0;
-    transform: translateX(35px);
-}
-
-.btn:hover .btn-circle i.fa-arrow-right,
-.btn:active .btn-circle i.fa-arrow-right  {
-    opacity: 1;
-    transform: translateX(30px);
-}
-
-button.btn:hover .btn-text,
-button.btn:active .btn-text {
-    color: var(--wine);
-}
-
-button.btn:hover .btn-text::after,
-button.btn:active .btn-text::after {
-    width: 0%;
 }
 
 /* Apply to all sections */
@@ -492,12 +286,6 @@ section {
         margin-top: 15%;
     }
 
-    #cat {
-        margin-top: 40px;
-        width: 80%; /* Make the image responsive */
-        max-width: 500px; /* Ensure the image doesn't get too large */
-    }
-
     #date {
         width: 40%; /* Make the image responsive */
         max-width: 400px; /* Ensure the image doesn't get too large */
@@ -517,7 +305,7 @@ section {
         width: 40%;
     }
       
-      .schedule td:last-child {
+    .schedule td:last-child {
         width: 60%;
     }
 }
@@ -530,15 +318,6 @@ section {
 
     .hero {
         padding: 10px;
-    }
-
-    .btn {
-        width: 300px;
-    }
-
-    button.btn .btn-text {
-        font-size: 1.3rem;
-        line-height: 1.5;
     }
 
     .marquee-content pre {
@@ -566,88 +345,7 @@ section {
       .schedule td:last-child {
         width: 55%;
     }
-}
-
-#sponsors-section {
-    padding: 20px 20px;
-    margin: 20px auto;
-    max-width: 900px;
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Wrap tabs to the next line on small screens */
-    gap: 10px; /* Add space between tabs */
-    margin-bottom: 15px;
-  }
-  
-  .tab {
-    background-color: var(--teal);
-    padding: 10px 15px;
-    margin: 0;
-    border-radius: 50px;
-    color: var(--yellow);
-    transition: transform 0.3s ease;
-    font-size: 1.2rem; 
-    text-align: center;
-  }
-  
-  .tab:hover {
-    transform: translateY(-8px);
-  }
-  
-  .tab-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 900px;
-    text-align: center;
-  }
-
-  .tab-pane {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  
-  .tab-pane img {
-    max-width: 150px;
-    height: auto;
-    margin: 15px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 800px) {
-    .tab {
-      padding: 8px 12px;
-      font-size: 1.1rem;
-    }
-  
-    .tab-pane img {
-      max-width: 120px; /* Scale down logos for smaller screens */
-      height: auto;
-      margin: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .tab {
-        font-size: 1rem;
-    }
-
-    .tab-pane img {
-      max-width: 100px; /* Further scale down logos */
-      margin: 8px;
-    }
-  }
-  
+}  
 
   .title {
     font-family: 'Roca One';

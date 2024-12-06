@@ -1,0 +1,118 @@
+/* Button container */
+#btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-family: var(--asty-font);
+}
+
+/* Button styles */
+.btn {
+    width: 400px;
+    height: auto;
+    margin-top: 40px;
+}
+
+.btn .btn-circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--yellow);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Ensures smooth hover animations */
+}
+
+.btn .btn-circle i {
+    font-size: 1.2rem;
+    color: var(--wine);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    opacity: 1;
+    transform: translateX(20px);
+}
+
+.btn .btn-circle i.fa-arrow-right {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+/* Button text */
+button.btn .btn-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 0;
+    margin: 0 35px 0 65px;
+    color: var(--yellow);
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+button.btn .btn-text::after {
+    color: var(--yellow);
+    content: '';
+    display: block;
+    width: 100%; /* Start with 0 width */
+    height: 2px; /* Thickness of the line */
+    background-color: var(--yellow); /* Line color */
+    margin: 5px auto 0; /* Space between text and line */
+    transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+/* Hover styles */
+.btn:hover .btn-circle, .btn:active .btn-circle {
+    width: 100%;
+}
+
+.btn:hover .btn-circle i.fa-chevron-right,
+.btn:active .btn-circle i.fa-chevron-right {
+    opacity: 0;
+    transform: translateX(35px);
+}
+
+.btn:hover .btn-circle i.fa-arrow-right,
+.btn:active .btn-circle i.fa-arrow-right  {
+    opacity: 1;
+    transform: translateX(30px);
+}
+
+button.btn:hover .btn-text,
+button.btn:active .btn-text {
+    color: var(--wine);
+}
+
+button.btn:hover .btn-text::after,
+button.btn:active .btn-text::after {
+    width: 0%;
+}
+
+@media (max-width: 600px) {
+
+    .btn {
+        width: 300px;
+    }
+
+    button.btn .btn-text {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+} 

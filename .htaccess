@@ -1,0 +1,23 @@
+
+# BEGIN WordPress
+# Οι ντιρεκτίβες (γραμμές) ανάμεσα `BEGIN WordPress` και`END WordPress` είναι
+# δυναμικά δημιουργημένες, και θα πρέπει να τροποποιούνται μόνο με την χρήση φίλτρων WordPress.
+# Οποιεσδήποτε αλλαγές στις ντιρεκτίβες ανάμεσα στους δείκτες θα επανεγραφεί.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|woff|woff2|ttf|svg|eot)$">
+        Header set Cache-Control "max-age=0, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+
+# END WordPress

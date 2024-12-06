@@ -1,0 +1,106 @@
+/* Light beam (yellow triangle with circle at the bottom) */
+.light-beam {
+    position: absolute;
+    opacity: 0;
+    width: 0; /* No explicit width */
+    height: 0; /* No height, just clip-path */
+    background-color: rgba(255, 255, 0, 0.3); /* Triangle color */
+    pointer-events: none; /* Prevent the beam from blocking interactions */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Default is an isosceles triangle */
+    animation: revealOpacity 2s ease-in-out 2.5s forwards, slowBlink 4s ease-in-out 4s infinite;
+}
+
+@keyframes slowBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Circle at the bottom of the beam */
+.circle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    animation: revealOpacity 3s ease-in-out 1s forwards; 
+}
+
+@keyframes revealOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cat-container {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    z-index: 1001; /* Cat image above everything else */
+}
+
+/* Ensure the cat stays on top of the overlay */
+#cat {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: cover;
+    height: auto;
+    flex-shrink: 0; /* Prevent shrinking */
+    /* animation: slideInLeft 2s ease-out; */
+}
+
+#eyes {
+    position: absolute;
+    transform-origin: center center;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    max-width: 95px;
+    animation: moveEyes 7s infinite linear;
+}
+
+@keyframes moveEyes {
+    0% {
+        transform: translateX(0px); /* Start at the left limit */
+    }
+    16.67% {
+        transform: translateX(var(--left-limit)); /* Move to neutral position */
+    }
+    33.33% {
+        transform: translateX(0px); /* Move to a slight right position */
+    }
+    50% {
+        transform: translateX(var(--middle-limit)); /* Move to the far right limit */
+    }
+    66.67% {
+        transform: translateX(var(--right-limit)); /* Move back to a slight right position */
+    }
+    83.33% {
+        transform: translateX(var(--middle-limit)); /* Move back to neutral position */
+    }
+    100% {
+        transform: translateX(0px); /* Move back to the left limit */
+    }
+}
+
+@media (max-width: 800px) {
+
+    #cat {
+        margin-top: 40px;
+        width: 80%; /* Make the image responsive */
+        max-width: 500px; /* Ensure the image doesn't get too large */
+    }
+}

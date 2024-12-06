@@ -1,0 +1,79 @@
+#sponsors-section {
+    padding: 20px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap tabs to the next line on small screens */
+    gap: 10px; /* Add space between tabs */
+    margin-bottom: 15px;
+  }
+  
+  .tab {
+    background-color: var(--teal);
+    padding: 10px 15px;
+    margin: 0;
+    border-radius: 50px;
+    color: var(--yellow);
+    transition: transform 0.3s ease;
+    font-size: 1.2rem; 
+    text-align: center;
+  }
+  
+  .tab:hover {
+    transform: translateY(-8px);
+  }
+  
+  .tab-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  .tab-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .tab-pane img {
+    max-width: 150px;
+    height: auto;
+    margin: 15px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 800px) {
+    .tab {
+      padding: 8px 12px;
+      font-size: 1.1rem;
+    }
+  
+    .tab-pane img {
+      max-width: 120px; /* Scale down logos for smaller screens */
+      height: auto;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tab {
+        font-size: 1rem;
+    }
+
+    .tab-pane img {
+      max-width: 100px; /* Further scale down logos */
+      margin: 8px;
+    }
+  }

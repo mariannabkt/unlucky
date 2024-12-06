@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Adjust eyes position initially and on window resize
     window.addEventListener("resize", adjustEyesPosition);
+    window.addEventListener('scroll', adjustEyesPosition);
     adjustEyesPosition();
 
     function adjustAnimation() {
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Adjust the animation range based on the window resize
     window.addEventListener("resize", adjustAnimation);
+    window.addEventListener('scroll', adjustAnimation);
 
     // Run once on page load
     adjustAnimation();
