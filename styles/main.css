@@ -186,6 +186,41 @@ main {
     /* animation: slideInLeft 2s ease-out; */
 }
 
+#eyes {
+    position: absolute;
+    transform-origin: center center;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    max-width: 95px;
+    animation: moveEyes 7s infinite linear;
+}
+
+@keyframes moveEyes {
+    0% {
+        transform: translateX(0px); /* Start at the left limit */
+    }
+    16.67% {
+        transform: translateX(var(--left-limit)); /* Move to neutral position */
+    }
+    33.33% {
+        transform: translateX(0px); /* Move to a slight right position */
+    }
+    50% {
+        transform: translateX(var(--middle-limit)); /* Move to the far right limit */
+    }
+    66.67% {
+        transform: translateX(var(--right-limit)); /* Move back to a slight right position */
+    }
+    83.33% {
+        transform: translateX(var(--middle-limit)); /* Move back to neutral position */
+    }
+    100% {
+        transform: translateX(0px); /* Move back to the left limit */
+    }
+}
+
+
 /* Hero text under the overlay */
 .hero-text {
     position: relative;
