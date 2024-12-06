@@ -53,6 +53,8 @@ function scrollToTopAndSetup() {
         // Update circle position and start animations
         updateCirclePosition();
         startRevealAnimation();
+        updateLightBeam();
+        adjustEyesPosition();
     }, 50); // Slight delay for layout updates
 }
 
