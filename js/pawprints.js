@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.pawprints');
-    const numPawprints = 20; // Adjust for more/less pawprints
+    const numPawprints = 40; // Adjust for more/less pawprints
   
     // Array to hold pawprint elements and positions
     const pawElements = [];

@@ -266,6 +266,7 @@ section {
 .host {
     text-align: center;
     background-color: #002127;
+    /* z-index: -3; */
 }
 
 #host {
@@ -277,9 +278,24 @@ section {
     font-size: 4em;
 }
 
+.parallel-activities li {
+    margin: 15px 0;
+}
+
 .workshops {
     background-color: #002127;
+    /* z-index: -3; */
+}
+
+.workshops h2, .workshops h3, .workshops p,
+.host h2, .host h3, .host p {
+    position: relative;
+    z-index: 1;
+}
+
+.workshops h3 {
     margin-top: 50px;
+    text-align: center;
 }
 
 .workshops h3 {
