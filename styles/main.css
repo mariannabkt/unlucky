@@ -272,6 +272,28 @@ section {
     font-size: 4em;
 }
 
+.workshops {
+    background-color: #002127;
+}
+
+.toggle-p {
+    display: none;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toggle-btn h4 {
+    margin: 8px 0;
+}
+
+.w-img {
+    width: 100%;
+}
+
 /* Media Queries for Responsiveness */
 
 /* Tablet */
@@ -332,6 +354,10 @@ section {
     .when-where {
         font-size: 1.25rem;
         margin: 0;
+    }
+    
+    #host {
+        width: 100%;
     }
 
     .schedule table {
