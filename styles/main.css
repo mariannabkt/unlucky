@@ -263,6 +263,11 @@ section {
     transition: transform 0.1s linear;
 }
 
+.host {
+    text-align: center;
+    background-color: #002127;
+}
+
 #host {
     max-width: 900px;
     max-height: 400px;
@@ -274,6 +279,12 @@ section {
 
 .workshops {
     background-color: #002127;
+    margin-top: 50px;
+}
+
+.workshops h3 {
+    margin-top: 50px;
+    text-align: center;
 }
 
 .toggle-p {
@@ -375,4 +386,6 @@ section {
 
   .title {
     font-family: 'Roca One';
+    text-align: center;
+    font-size: 2.5rem;
   }
