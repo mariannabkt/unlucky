@@ -20,13 +20,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <!-- Script -->
-    <script src="js/pawprints.js" defer></script>
+    <script src="js/pawprints.js"></script>
     <script src="js/marquee.js" defer></script>
-    <script src="js/header.js" defer></script>
-    <script src="js/star.js" defer></script>
-    <script src="js/cat-eyes.js" defer></script>
-    <script src="js/sponsors.js" defer></script>
-    <script src="js/entry-transition.js" defer></script>
+    <script src="js/header.js"></script>
+    <script src="js/star.js"></script>
+    <script src="js/cat-eyes.js"></script>
+    <script src="js/sponsors.js"></script>
+    <script src="js/entry-transition.js"></script>
     <script src="js/toggle.js" defer></script>
 </head>
 <body>
@@ -49,7 +49,9 @@
     <div class="root">
         <div class="main-container">
             <header class="head">
-                <img class="logo" src="styles/images/tedlogo.png" alt="TEDxAUEB Logo">
+                <a target="_blank" href="https://tedxaueb.org/">
+                    <img class="logo" src="styles/images/tedlogo.png" alt="TEDxAUEB Logo" style="display: block;">
+                </a>
                 <img class="star" src="styles/images/star.png" alt="star">
                 <nav class="menu">
                     <ul>
@@ -152,8 +154,29 @@
             </p>
         </section>
 
+        <section class="desc video-download">
+            <video controls height="500px" poster="styles/images/teaser cover.png">
+                <source src="styles/unlucky teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="wallpapers">
+                <img src="styles/images/svgs/dice-1.svg" alt="dice" width="60px" height="60px">
+                <h3 class="title">Unlucky Wallpapers</h3>
+                <a  class="download" href="styles/images/unlucky wallpaper mobile.png" download="Unlucky_Mobile_Wallpaper.png">
+                    <img src="styles/images/mobile-download.png" alt="mobile download">
+                    <p>Download Mobile Wallpaper</p>
+                </a>
+                <a  class="download" href="styles/images/unlucky wallpaper destop.png" download="Unlucky_Desktop_Wallpaper.png">
+                    <img src="styles/images/desktop-download.png" alt="desktop download">
+                    <p>Download Desktop Wallpaper</p>
+                </a>
+            </div>
+        </section>
+        
+
         <!-- Host Section -->
         <section class="host">
+            <div class="bg"></div>
             <div class="desc">
                 <h2 class="title">Host</h2>
                 <h3>Γιώργος Ντάβος</h3>
@@ -185,7 +208,7 @@
                 </tr>
                 <tr>
                     <td>12:00 - 13:00</td>
-                    <td>Lifeline Game</td>
+                    <td>Lifeline</td>
                 </tr>
                 <tr>
                     <td>13:00 - 14:00</td>
@@ -219,25 +242,38 @@
         </section>
 
         <!-- Activities Section -->
-        <section class="parallel-activities desc">
-            <h2 class="title">Activities</h2>
-            <ul>
-                <!-- <li><strong>Make Your Own Charm:</strong> Δημιουργήστε το δικό σας γούρι για καλή τύχη και θετική ενέργεια!</li> -->
-                <li><strong>Παγκάκι Open to Talk:</strong> Συζητήστε ανοιχτά και μοιραστείτε σκέψεις σε ένα φιλόξενο περιβάλλον.</li>
-                <li><strong>Spin the Wheel:</strong> Γυρίστε τον τροχό και ανακαλύψτε εκπλήξεις!</li>
-                <li><strong>Punch your Bad Luck:</strong> Απαλλαγείτε από την ατυχία με έναν συμβολικό σάκο του box.</li>
-                <li><strong>[14:00-18:00] Testing για HIV από τη Θετική Φωνή:</strong> Κάντε δωρεάν και διακριτικό τεστ HIV με την υποστήριξη της Θετικής Φωνής.</li>
-            </ul>
+        <section class="parallel-activities">
+            <div class="bg"></div>
+            <div class="desc">
+                <h2 class="title">Activities</h2>
+                <ul>
+                    <!-- <li><strong>Make Your Own Charm:</strong> Δημιουργήστε το δικό σας γούρι για καλή τύχη και θετική ενέργεια!</li> -->
+                    <li><img src="styles/images/svgs/diamond.svg" alt="diamond" width="30px" height="30px">
+                        <p><strong>Παγκάκι Open to Talk:</strong></p> 
+                        <p>Συζητήστε ανοιχτά και μοιραστείτε σκέψεις σε ένα φιλόξενο περιβάλλον.</p></li>
+                    <li><img src="styles/images/svgs/clover.svg" alt="clover" width="30px" height="30px">
+                        <p><strong>Spin the Wheel:</strong></p> 
+                        <p>Γυρίστε τον τροχό και ανακαλύψτε εκπλήξεις!</p></li>
+                    <li><img src="styles/images/svgs/spades.svg" alt="spades" width="30px" height="30px">
+                        <p><strong>Punch your Bad Luck:</strong></p>
+                        <p>Απαλλαγείτε από την ατυχία με έναν συμβολικό σάκο του box.</p></li>
+                    <li><img src="styles/images/svgs/heart.svg" alt="heart" width="30px" height="30px">
+                        <p><strong>[14:00-18:00] Testing για HIV από τη Θετική Φωνή:</strong><p> 
+                        <p>Κάντε δωρεάν και διακριτικά τεστ HIV με την υποστήριξη της Θετικής Φωνής.</p>
+                        <img class="w-img" src="styles/images/workshops/logo_positive_web_transp (1).jpg" alt="thetiki foni"></li>
+                </ul>
+            </div>
         </section>
 
         <!-- Workshops Section -->
         <section class="workshops">
+            <div class="bg"></div>
             <div class="desc">
                 <h2 class="title">Workshops</h2>
                 <div class="workshops-list">
                     <div class="workshop">
                         <h3>Improv Theater: Βρίσκοντας το fun σου στην Τύχη και την Ατυχία</h3>
-                        <img class="w-img" src="styles/images/workshops/unlucky cat post (3)-11.png" alt="host photo">
+                        <img class="w-img" src="styles/images/workshops/unlucky cat post IMPROVIBE.png" alt="ImproVIBE Workshop">
                         <p>Η ImproVIBE, η πρώτη σχολή Αυτοσχεδιαστικού Θεάτρου (Improv Theater) στην Αθήνα, έρχεται να μας μυήσει στη μαγεία του improv! 
                             Μέσα από αυτό το διαδραστικό workshop, θα εξερευνήσουμε πώς να μετατρέπουμε τις "ατυχίες" σε ευκαιρίες δημιουργίας και γέλιου. 
                             Θα γελάσουμε, θα αυτοσχεδιάσουμε και θα ανακαλύψουμε την ελευθερία του αυθορμητισμού μας!</p>
@@ -285,7 +321,7 @@
                     </div>
                     <div class="workshop">
                         <h3>Q&A με την Σχεδία</h3>
-                        <img class="w-img" src="styles/images/workshops/unlucky cat post (3)-12.png" alt="host photo">
+                        <img class="w-img" src="styles/images/workshops/unlucky cat post SHEDIA.png" alt="QnA Shedia">
                         <p>Η Σχεδία, το περιοδικό δρόμου που αλλάζει ζωές, μας εμπνέει μέσα από μια ανοιχτή συζήτηση με τον ιδρυτή της, Χρήστο Αλεφάντη. 
                             Θα έχουμε την ευκαιρία να ακούσουμε την ιστορία πίσω από τη Σχεδία, να μάθουμε για την κοινωνική της δράση και να θέσουμε τις δικές μας ερωτήσεις, 
                             σε μια συζήτηση γεμάτη έμπνευση και ενσυναίσθηση</p>
@@ -294,32 +330,67 @@
             </div>
         </section>
 
-        <div id="sponsors-section">
-            <div class="tabs">
-              <button class="tab" onclick="switchTab('in-kind')">IN KIND</button>
-              <button class="tab" onclick="switchTab('media-partners')">MEDIA PARTNERS</button>
-            </div>
-            
-            <div class="tab-content">
-                <div id="in-kind" class="tab-pane">
-                    <img src="styles/images/LOGO SPONSORS/inkind/Barilla(MISKO)/Misko_Logo_Final_Basic_RGB.png" alt="Misko">
-                    <img src="styles/images/LOGO SPONSORS/inkind/COLGATE-PERIOGARD/colgate smile.jpg" alt="COLGATE">
-                    <img src="styles/images/LOGO SPONSORS/inkind/Jukebooks/jukebooks (1).png" alt="Jukebooks">
-                    <img src="styles/images/LOGO SPONSORS/inkind/OLYMPOS_greeklogo.png" alt="Olympos">
-                    <img src="styles/images/LOGO SPONSORS/inkind/SKAG/GetInspired_High.jpg" alt="Skag">
-                    <img src="styles/images/LOGO SPONSORS/inkind/ΜΑΜΟΣ/MAMOS_Logo_PMS.png" alt="Mamos">
-                    <img src="styles/images/LOGO SPONSORS/inkind/ΜΗΛΟΚΛΕΦΤΗΣ/MK_Logo_digital_alt.png" alt="Μηλοκλέφτης">
+        <!-- Sponsors Section -->
+        <section id="sponsors-section">
+            <div class="sponsors-container">
+                <h2 class="title">Sponsors</h2>
+                <div class="tabs">
+                    <button id="in-kind-tab" class="tab selected" onclick="switchTab('in-kind-tab', 'in-kind')">PARTNER-IN KIND</button>
+                    <button id="parners-tab" class="tab" onclick="switchTab('parners-tab', 'media-partners')">MEDIA PARTNERS</button>
                 </div>
-                <div id="media-partners" class="tab-pane" style="display: none;">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p. abc gen z.jpg" alt="ABC GEN Z">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p. aueb.jpg" alt="AUEB">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p. esn aueb.png" alt="ESN AUEB">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p. thinkbiz.jpg" alt="THINK BIZ">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p. uni ai transparent.png" alt="UNI AI">
-                    <img src="styles/images/LOGO SPONSORS/media partners/m.p.acein.png" alt="AceIn">
-                </div>
+                
+                <div class="tab-content">
+                    <div id="in-kind" class="tab-pane">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Power Health/LOGO_POWER_.png" alt="Power Health">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Barilla(MISKO)/Misko_Logo_Final_Basic_RGB.png" alt="Misko">
+                        <img src="styles/images/LOGO SPONSORS/inkind/redbull/red-bull-energy-drink-logo.png" alt="RedBull">
+                        <img src="styles/images/LOGO SPONSORS/inkind/ΟΛΥΜΠΟΣ/OLYMPOS_greeklogo.png" alt="Olympos">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Mondelez/7days 2013.png" alt="7days">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Mondelez/Chipita_Chips LOGO.png" alt="Chipita Chips">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Mondelez/10912_OREO_MEU_Master_Logo_Screen_RGB.png" alt="OREO">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Mondelez/lacta-heart transparent 1.png" alt="LACTA">
+                        <img src="styles/images/LOGO SPONSORS/inkind/ΜΗΛΟΚΛΕΦΤΗΣ/milokleftis-logo.png" alt="Μηλοκλέφτης">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Mevgal (Topino)/mevgal topino.png" alt="ΜΕΒΓΑΛ TOPINO">
+                        <img src="styles/images/LOGO SPONSORS/inkind/FINO/FINO.png" alt="FINO">
+                        <img src="styles/images/LOGO SPONSORS/inkind/AHMAD TEA/AhmadTeaLogo.png" alt="Ahmad Tea">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Potato King/POTATO KING.png" alt="Potato King">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Big Nick/BIGNICKLOGOB.png" alt="Big Nick">
+                        <img src="styles/images/LOGO SPONSORS/inkind/ΘΕΚΑ/theka.png" alt="ΘΕΚΑ">
+                        <img src="styles/images/LOGO SPONSORS/inkind/handpicked cherries/handpicked cherries.png" alt="handpicked cherries">
+                        <img src="styles/images/LOGO SPONSORS/inkind/LORDA/lorda.png" alt="ΛΟΡΔΑ">
+                        <img src="styles/images/LOGO SPONSORS/inkind/AQUA CARPATICA/AC LOGO horizontal black.png" alt="AQUA CARPATICA">
+                        <img src="styles/images/LOGO SPONSORS/inkind/ΜΑΜΟΣ/MAMOS_Logo_PMS.png" alt="Mamos">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Αρισμαρί Αβάρσαμο/Αρισμαρί Αβάρσαμο_white.png" alt="Αρισμαρί Αβάρσαμο">
+                        <img src="styles/images/LOGO SPONSORS/inkind/MAX PERRY/logo-max-perry.png" alt="MAX PERRY">
+                        <img src="styles/images/LOGO SPONSORS/inkind/NANOU/nanou-donuts-logo.png" alt="NANOU DONUTS">
+                        <img src="styles/images/LOGO SPONSORS/inkind/SKAG/skag.png" alt="Skag">
+                        <img src="styles/images/LOGO SPONSORS/inkind/COLGATE-PERIOGARD/colgate smile.jpg" alt="COLGATE">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Matalon (Pilot & Deli)/Deli-01.png" alt="DELI">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Matalon (Pilot & Deli)/PILOT_rectangle.png" alt="PILOT">
+                        <img src="styles/images/LOGO SPONSORS/inkind/DIGITAL PRINT/logo all rgb.png" alt="DIGITAL PRINT">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Naughty Dogs/naughty dogs.png" alt="Naughty Dogs"> 
+                        <img src="styles/images/LOGO SPONSORS/inkind/Papoutsanis/papoutsanis.png" alt="Papoutsanis">
+                        <img src="styles/images/LOGO SPONSORS/inkind/Jukebooks/jukebooks (1).png" alt="Jukebooks">
+                        <!-- <img src="styles/images/LOGO SPONSORS/inkind/ΧΑΡΑΛΑΜΠΙΔΗΣ/cropped-logo-gkri-1-240x43.png" alt="ΧΑΡΑΛΑΜΠΙΔΗΣ"> -->
+                    </div>
+                    <div id="media-partners" class="tab-pane" style="display: none;">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p. abc gen z.jpg" alt="ABC GEN Z">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p. aueb.jpg" alt="AUEB">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p. esn aueb.png" alt="ESN AUEB">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p. thinkbiz.jpg" alt="THINK BIZ">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p. uni ai transparent.png" alt="UNI AI">
+                        <img src="styles/images/LOGO SPONSORS/media partners/m.p.acein.png" alt="AceIn">
+                    </div>
+                </div> 
             </div>
-        </div>
+        </section>
+
+        <section class="organising-team">
+            <h2 class="title">Meet the</h2>
+            <a target="_blank" href="https://tedxaueb.org/meet-the-team/">
+                <img class="org-photo" src="styles/images/organising_team.png" alt="organising team photo" style="display: block;">
+            </a>
+        </section>
     </main>
     
     <footer>
@@ -351,7 +422,9 @@
         </div>
         
         <div class="footer-bottom">
-            <img class="footer-logo" src="styles/images/tedlogo.png" alt="TEDxAUEB Logo">
+            <a target="_blank" href="https://tedxaueb.org/">
+                <img class="footer-logo" src="styles/images/tedlogo.png" alt="TEDxAUEB Logo" style="display: block;">
+            </a>
             <div class="footer-text">
                 <p>Copyright © 2024 TEDxAUEB | This independent TEDx event is operated under license from TED</p>
             </div>

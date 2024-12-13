@@ -1,79 +1,90 @@
 #sponsors-section {
-    padding: 20px 20px;
-    margin: 50px auto;
-    max-width: 900px;
-  }
+  padding: 10px 20px 50px;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+}
+
+#sponsors-section h2 {
+  color: var(--teal);
+}
+
+.sponsors-container {
+  max-width: 900px;
+}
   
-  .tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Wrap tabs to the next line on small screens */
-    gap: 10px; /* Add space between tabs */
-    margin-bottom: 15px;
-  }
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  background-color: var(--teal);
+  padding: 10px 15px;
+  margin: 0;
+  border-radius: 50px;
+  color: var(--yellow);
+  transition: transform 0.3s ease;
+  font-size: 1.2rem; 
+  text-align: center;
+}
+
+.tab:hover, .selected {
+  background-color: var(--wine);
+}
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  text-align: center;
+}
+
+.tab-pane {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 15px;
+}
+
+.tab-pane img {
+  max-width: 100px;
+  max-height: 150px;
+  margin: 15px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
   
+/* Responsive Adjustments */
+@media (max-width: 800px) {
   .tab {
-    background-color: var(--teal);
-    padding: 10px 15px;
-    margin: 0;
-    border-radius: 50px;
-    color: var(--yellow);
-    transition: transform 0.3s ease;
-    font-size: 1.2rem; 
-    text-align: center;
-  }
-  
-  .tab:hover {
-    transform: translateY(-8px);
-  }
-  
-  .tab-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 900px;
-    text-align: center;
+    padding: 8px 12px;
+    font-size: 1.1rem;
   }
 
-  .tab-pane {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  
   .tab-pane img {
-    max-width: 150px;
+    max-width: 120px; /* Scale down logos for smaller screens */
     height: auto;
-    margin: 15px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    margin: 10px;
   }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 800px) {
-    .tab {
-      padding: 8px 12px;
-      font-size: 1.1rem;
-    }
-  
-    .tab-pane img {
-      max-width: 120px; /* Scale down logos for smaller screens */
-      height: auto;
-      margin: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .tab {
-        font-size: 1rem;
-    }
+}
 
-    .tab-pane img {
-      max-width: 100px; /* Further scale down logos */
-      margin: 8px;
-    }
+@media (max-width: 480px) {
+  .tab {
+      font-size: 1rem;
   }
+
+  .tab-pane img {
+    max-width: 80px; /* Further scale down logos */
+    max-height: 100px;
+    margin: 8px;
+  }
+}

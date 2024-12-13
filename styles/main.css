@@ -233,7 +233,7 @@ section {
   }
   
   .schedule td {
-    padding: 10px 15px;
+    padding: 10px;
     vertical-align: top;
   }
   
@@ -265,8 +265,6 @@ section {
 
 .host {
     text-align: center;
-    background-color: #002127;
-    /* z-index: -3; */
 }
 
 #host {
@@ -274,23 +272,78 @@ section {
     max-height: 400px;
 }
 
+.video-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.wallpapers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: var(--yellow);
+}
+
+.wallpapers .title {
+    margin: 0 0 20px;
+}
+
 .marquee-content pre {
     font-size: 4em;
 }
 
+.parallel-activities .desc {
+    margin: 20px auto 0;
+}
+
+.parallel-activities ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .parallel-activities li {
     margin: 15px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parallel-activities p, .parallel-activities h2 {
+    color: var(--teal);
+    text-align: center;
+    margin: 8px 0 0;
+}
+
+.parallel-activities .bg {
+    background-color: var(--yellow);
+    z-index: -1;
+}
+
+.parallel-activities .w-img {
+    max-width: 300px;
 }
 
 .workshops {
-    background-color: #002127;
-    /* z-index: -3; */
-}
-
-.workshops h2, .workshops h3, .workshops p,
-.host h2, .host h3, .host p {
     position: relative;
-    z-index: 1;
+}
+
+.workshops .desc {
+    margin: 0 auto;
+    padding: 20px 40px 60px;
 }
 
 .workshops h3 {
@@ -298,9 +351,14 @@ section {
     text-align: center;
 }
 
-.workshops h3 {
-    margin-top: 50px;
-    text-align: center;
+.bg {
+    background-color: var(--teal);
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    z-index: -3;
 }
 
 .toggle-p {
@@ -319,6 +377,12 @@ section {
 
 .w-img {
     width: 100%;
+}
+
+.organising-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Media Queries for Responsiveness */
@@ -382,6 +446,10 @@ section {
         font-size: 1.25rem;
         margin: 0;
     }
+
+    .video-download {
+        flex-direction: column;
+    }
     
     #host {
         width: 100%;
@@ -397,6 +465,10 @@ section {
       
       .schedule td:last-child {
         width: 55%;
+    }
+
+    .organising-team img {
+        width: 100%;
     }
 }  
 
