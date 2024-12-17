@@ -1,5 +1,5 @@
 #sponsors {
-  padding: 10px 20px 50px;
+  padding: 40px;
   background-color: var(--yellow);
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@
 #sponsors h2, #sponsors h3 {
   color: var(--teal);
   font-family: 'Roca One';
+  margin: 0;
 }
 
 .sponsors-container {
@@ -63,8 +64,12 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  text-align: center;
   margin: 0 15px;
+  width: 100%;
+}
+
+#single-sponsor {
+  justify-content: center;
 }
 
 .tab-pane img {
