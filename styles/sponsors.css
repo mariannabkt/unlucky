@@ -1,16 +1,28 @@
-#sponsors-section {
+#sponsors {
   padding: 10px 20px 50px;
   background-color: var(--yellow);
   display: flex;
   justify-content: center;
 }
 
-#sponsors-section h2 {
+#sponsors h2, #sponsors h3 {
   color: var(--teal);
+  font-family: 'Roca One';
 }
 
 .sponsors-container {
   max-width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sponsors-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
   
 .tabs {
