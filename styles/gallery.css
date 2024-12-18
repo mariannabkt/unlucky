@@ -1,0 +1,94 @@
+.gallery {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--teal);
+    overflow: hidden;
+}
+
+.gallery h2 {
+    margin: 0;
+}
+
+.gallery-container {
+    max-width: 900px;
+    width: 70%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 60px;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    opacity: 40%;
+}
+
+.shown {
+    opacity: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    border-radius: 100%;
+    padding: 10px;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: -50px;
+}
+
+.right-arrow {
+    right: -50px;
+}
+
+.thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.thumbnails img {
+    flex-shrink: 0;
+    height: 50px;
+    object-fit: contain;
+    margin: 0 5px;
+    border: 2px solid transparent;
+}
+
+.thumbnails img.current {
+    border-color: var(--yellow);
+}
+
+.thumbnails img:hover {
+    opacity: 40%;
+}
