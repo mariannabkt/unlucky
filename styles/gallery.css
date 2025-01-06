@@ -92,3 +92,16 @@
 .thumbnails img:hover {
     opacity: 40%;
 }
+
+.recap-btn {
+    width: 325px;
+    background-color: var(--yellow);
+    border-radius: 25px;
+    padding: 12px 30px;
+}
+  
+.recap-btn a {
+    text-decoration: none;
+    color: var(--teal);
+    font-size: 1.3rem;
+}

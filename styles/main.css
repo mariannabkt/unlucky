@@ -423,6 +423,12 @@ section {
     }
 }
 
+@media (max-width: 640px) {
+    .video-download {
+        flex-direction: column;
+    }
+}
+
 /* Mobile */
 @media (max-width: 600px) {
     .star {
@@ -446,10 +452,6 @@ section {
         font-size: 1.25rem;
         margin: 0;
     }
-
-    .video-download {
-        flex-direction: column;
-    }
     
     #host {
         width: 100%;
@@ -472,8 +474,19 @@ section {
     }
 }  
 
-  .title {
+.title {
     font-family: 'Roca One';
     text-align: center;
     font-size: 2.5rem;
-  }
+}
+
+video {
+    border-radius: 7px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}

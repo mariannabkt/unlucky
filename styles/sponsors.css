@@ -75,9 +75,22 @@
 .tab-pane img {
   max-width: 100px;
   max-height: 150px;
-  margin: 15px;
+  margin: 18px 22px;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
+.giftbag-btn {
+  width: 325px;
+  background-color: var(--teal);
+  border-radius: 25px;
+  padding: 12px 30px;
+}
+
+.giftbag-btn a {
+  text-decoration: none;
+  color: var(--yellow);
+  font-size: 1.3rem;
 }
   
 /* Responsive Adjustments */
@@ -88,13 +101,13 @@
   }
 
   .tab-pane img {
-    max-width: 120px; /* Scale down logos for smaller screens */
+    max-width: 100px; /* Scale down logos for smaller screens */
     height: auto;
-    margin: 10px;
+    margin: 10px 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .tab {
       font-size: 1rem;
   }
@@ -102,6 +115,6 @@
   .tab-pane img {
     max-width: 80px; /* Further scale down logos */
     max-height: 100px;
-    margin: 8px;
+    margin: 10px 18px;
   }
 }
