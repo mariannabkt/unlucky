@@ -115,6 +115,6 @@
   .tab-pane img {
     max-width: 80px; /* Further scale down logos */
     max-height: 100px;
-    margin: 10px 18px;
+    margin: 8px;
   }
 }
