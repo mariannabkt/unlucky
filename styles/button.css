@@ -38,7 +38,7 @@ button {
 
 .btn .btn-circle i {
     font-size: 1.2rem;
-    color: var(--wine);
+    color: var(--teal);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     opacity: 1;
@@ -97,7 +97,7 @@ button.btn .btn-text::after {
 
 button.btn:hover .btn-text,
 button.btn:active .btn-text {
-    color: var(--wine);
+    color: var(--teal);
 }
 
 button.btn:hover .btn-text::after,

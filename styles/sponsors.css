@@ -61,7 +61,7 @@
 
 .tab-pane {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   margin: 0 15px;

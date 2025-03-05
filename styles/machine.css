@@ -1,0 +1,103 @@
+.machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15%;
+}
+
+
+.machine__numbers {
+    display: flex;
+    position: relative;
+}
+
+
+.spin-btn {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    background: var(--yellow);
+    color: var(--teal);
+    font-family: var(--roca-font);
+    font-weight: 700;
+    font-size: calc(14px + 1vw);
+    padding: 10px;
+}
+
+.spin-btn:is(:hover, :focus-visible) {
+    color: var(--wine);
+}
+
+.machine__numbers::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(var(--yellow), transparent 0px calc(100% - 0px), var(--yellow)),
+        linear-gradient(var(--yellow), transparent 20% 80%, var(--yellow));
+}
+
+.machine__number::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    mask: linear-gradient(transparent, var(--yellow), transparent);
+    border-inline: 2px solid var(--yellow);
+}
+
+.machine__number:nth-of-type(2)::before {
+    border-inline: 1px solid var(--yellow);
+}
+
+.machine__number {
+    width: 20vmin;
+    position: relative;
+    aspect-ratio: 1 / 1.25;
+    background: url(images/numbers.svg) 50% calc(5vmin + (var(--iterations, 0) * 15vmin)) / 75%;
+}
+
+:root {
+    --ease: linear(0 0%, 0.7871 2.92%, 1.3024 5.5%,
+            1.6128 8.07%, 1.6962 9.4%,
+            1.7331 10.78%, 1.7332 11.67%,
+            1.7161 12.6%, 1.6291 14.65%,
+            1.136 21.61%, 0.9679 24.51%,
+            0.869 27.14%, 0.8392 28.47%,
+            0.8217 29.84%, 0.8168 31.71%,
+            0.8317 33.78%, 0.8622 35.91%,
+            0.9975 43.68%, 1.0286 46.58%,
+            1.0439 49.53%, 1.0459 51.54%,
+            1.0421 53.76%, 1.0013 63.48%,
+            0.9894 68.99% 73.67%, 1.0023 87.89%,
+            1 100%);
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    .machine__number {
+        transition: background-position 1s var(--ease);
+    }
+
+    .machine__number:nth-of-type(1) {
+        transition-duration: 1s;
+    }
+
+    .machine__number:nth-of-type(2) {
+        transition-duration: 1.1s;
+    }
+
+    .machine__number:nth-of-type(3) {
+        transition-duration: 1.2s;
+    }
+}
+
+/* @keyframes spin {
+	to {
+		background-position: 50% calc(5vmin + ((var(--iterations, 0) + 50) * 15vmin));
+	}
+} */
+
+@media (max-width: 600px) {
+    .machine {
+        margin-bottom: 20%;
+    }
+}

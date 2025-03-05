@@ -1,25 +1,31 @@
 /* Define global CSS variables in :root */
 :root {
-    --yellow: #f3ff00; /* Bright Yellow */
-    --wine: #440000; /* Deep Red */
-    --teal: #002127; /* Dark Teal */
+    --yellow: #f3ff00;
+    /* Bright Yellow */
+    --wine: #440000;
+    /* Deep Red */
+    --teal: #002127;
+    /* Dark Teal */
     --asty-font: 'CFAstyStd', Arial, sans-serif;
     --roca-font: 'Roca One', 'CFAstyStd', Arial, sans-serif;
 }
 
 * {
-    cursor: url(images/hand-cursor.png), auto; 
+    cursor: url(images/hand-cursor.png), auto;
     box-sizing: border-box;
 }
 
 body {
     font-family: var(--asty-font);
-    background-color: var(--wine);
+    background-color: var(--teal);
     color: var(--yellow);
     margin: 0;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     color: var(--yellow);
 }
 
@@ -35,13 +41,13 @@ h1, h2, h3, p {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: url('images/pawprint.png') no-repeat center/contain; 
+    background: url('images/pawprint.png') no-repeat center/contain;
     opacity: 0;
     transform: translateY(50px);
     rotate: 90deg;
     transition: opacity 0.5s linear;
 }
-  
+
 
 main {
     position: relative;
@@ -49,8 +55,10 @@ main {
 
 /* Disable scrolling and pointer events during the entry transition */
 .no-scroll {
-    overflow: hidden; /* Prevent scrolling */
-    pointer-events: none; /* Disable user actions */
+    overflow: hidden;
+    /* Prevent scrolling */
+    pointer-events: none;
+    /* Disable user actions */
 }
 
 
@@ -62,15 +70,18 @@ main {
     width: 100vw;
     height: 100vh;
     background-color: black;
-    opacity: 1; /* Initially visible */
-    z-index: 1000; /* Overlay above everything */
+    opacity: 1;
+    /* Initially visible */
+    z-index: 1000;
+    /* Overlay above everything */
     animation: hideBackground 0s 4s forwards, hideOverlay 0s 9s forwards;
 }
 
 /* Hide the overlay after animation */
 @keyframes hideOverlay {
     100% {
-        visibility: hidden; /* Hide the overlay after animation ends */
+        visibility: hidden;
+        /* Hide the overlay after animation ends */
     }
 }
 
@@ -96,10 +107,13 @@ main {
 /* Animation for the Circle */
 @keyframes circleReveal {
     0% {
-        r: 0; /* Start with a tiny circle */
+        r: 0;
+        /* Start with a tiny circle */
     }
+
     100% {
-        r: 150; /* Expand the circle */
+        r: 150;
+        /* Expand the circle */
     }
 }
 
@@ -134,13 +148,17 @@ main {
 }
 
 #date {
-    width: 50%; /* Make the image responsive */
-    max-width: 400px; /* Ensure the image doesn't get too large */
+    width: 50%;
+    /* Make the image responsive */
+    max-width: 400px;
+    /* Ensure the image doesn't get too large */
 }
 
 #unlucky {
-    width: 80%; /* Make the image responsive */
-    max-width: 700px; /* Ensure the image doesn't get too large */
+    width: 80%;
+    /* Make the image responsive */
+    max-width: 700px;
+    /* Ensure the image doesn't get too large */
 }
 
 /* Slide-in effect for text and cat */
@@ -148,6 +166,7 @@ main {
     from {
         transform: translateX(-100%);
     }
+
     to {
         transform: translateX(0);
     }
@@ -157,6 +176,7 @@ main {
     from {
         transform: translateX(100%);
     }
+
     to {
         transform: translateX(0);
     }
@@ -183,6 +203,7 @@ section {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -194,6 +215,7 @@ section {
         transform: translateX(100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -210,6 +232,23 @@ section {
     max-width: 900px;
 }
 
+.theme-desc {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+}
+
+.ladder {
+    float: left;
+    max-height: 70vh;
+    position: sticky;
+    top: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+
 .when-where {
     font-size: 1.6rem;
     text-align: center;
@@ -220,39 +259,48 @@ section {
     margin: 20px auto;
     text-align: left;
     max-width: 900px;
-  }
-  
-  .schedule h1 {
+}
+
+.schedule h1 {
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .schedule table {
-    width: 100%;
-    border-collapse: collapse; /* Removes default table spacing */
-  }
-  
-  .schedule td {
+}
+
+.schedule table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.schedule td {
     padding: 10px;
     vertical-align: top;
-  }
-  
-  .schedule td:first-child {
+}
+
+.schedule td:first-child {
+    font-weight: 300;
+    text-align: right;
+}
+
+.schedule td:last-child {
     font-weight: bold;
-    width: 30%; /* Ensures the time column stays narrow */
-  }
-  
-  .schedule td:last-child {
-    width: 70%; /* Ensures the description column is wider */
-  }
-  
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.duration {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
 
 .marquee-wrapper {
     width: 100%;
     overflow: hidden;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
 
 .marquee-content {
@@ -301,6 +349,7 @@ section {
 
 .marquee-content pre {
     font-size: 4em;
+    font-family: var(--roca-font);
 }
 
 .parallel-activities .desc {
@@ -322,7 +371,8 @@ section {
     align-items: center;
 }
 
-.parallel-activities p, .parallel-activities h2 {
+.parallel-activities p,
+.parallel-activities h2 {
     color: var(--teal);
     text-align: center;
     margin: 8px 0 0;
@@ -352,11 +402,11 @@ section {
 }
 
 .bg {
-    background-color: var(--teal);
+    background-color: var(--wine);
     position: absolute;
-    top: 0; 
-    bottom: 0; 
-    left: 0; 
+    top: 0;
+    bottom: 0;
+    left: 0;
     right: 0;
     z-index: -3;
 }
@@ -380,6 +430,7 @@ section {
 }
 
 .organising-team {
+    background-color: var(--wine);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -394,33 +445,31 @@ section {
     }
 
     .hero {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
+        /* Stack image and text vertically */
         gap: 15px;
         margin-top: 15%;
     }
 
     #date {
-        width: 40%; /* Make the image responsive */
-        max-width: 400px; /* Ensure the image doesn't get too large */
+        width: 40%;
+        /* Make the image responsive */
+        max-width: 400px;
+        /* Ensure the image doesn't get too large */
         margin-top: 15%;
     }
 
     #unlucky {
-        width: 80%; /* Make the image responsive */
-        max-width: 600px; /* Ensure the image doesn't get too large */
+        width: 80%;
+        /* Make the image responsive */
+        max-width: 600px;
+        /* Ensure the image doesn't get too large */
     }
 
     .marquee-content pre {
         font-size: 2.5rem;
     }
 
-    .schedule td:first-child {
-        width: 40%;
-    }
-      
-    .schedule td:last-child {
-        width: 60%;
-    }
 }
 
 @media (max-width: 640px) {
@@ -452,27 +501,23 @@ section {
         font-size: 1.25rem;
         margin: 0;
     }
-    
+
     #host {
         width: 100%;
     }
 
-    .schedule table {
-        font-size: 1.1rem;
+    .schedule table, .duration {
+        font-size: 1rem;
     }
 
-    .schedule td:first-child {
-        width: 45%;
-    }
-      
-      .schedule td:last-child {
-        width: 55%;
+    .schedule td:last-child {
+        font-size: 1.2rem;
     }
 
     .organising-team img {
         width: 100%;
     }
-}  
+}
 
 .title {
     font-family: 'Roca One';

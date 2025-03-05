@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--teal);
     overflow: hidden;
 }
 
@@ -49,11 +48,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--yellow);
-    border: 2px solid var(--yellow);
-    border-radius: 100%;
-    padding: 10px;
     z-index: 10;
+}
+
+.arrow img {
+    width: 40px;
+    height: 40px;
 }
 
 .left-arrow {
@@ -75,6 +75,16 @@
     justify-content: start;
     margin-top: 10px;
     transition: transform 0.5s ease-in-out;
+    overflow-x: scroll;
+    user-select: none;
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer/Edge */
+}
+
+.thumbnails::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .thumbnails img {
@@ -83,14 +93,11 @@
     object-fit: contain;
     margin: 0 5px;
     border: 2px solid transparent;
+    pointer-events: none;
 }
 
 .thumbnails img.current {
     border-color: var(--yellow);
-}
-
-.thumbnails img:hover {
-    opacity: 40%;
 }
 
 .recap-btn {
