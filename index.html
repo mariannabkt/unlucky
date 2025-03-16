@@ -9,7 +9,6 @@
     <meta name="description" content="TEDxAUEB 2025 Pre-event: Unlucky - Cross your fingers. Τιμώντας την 13η συνεχόμενη χρονιά των TEDxAUEB events, το 6o Pre-event του TEDxAUEB θα λάβει χώρα στην Άτρακτο το Σάββατο 14/12/2024, 10:00-19:00.">
     <meta name="keywords" content="tedxaueb, ted, tedx, aueb, unlucky, TEDXAUEB, TED, TEDX, AUEB, ΟΠΑ, ΑΣΟΕΕ, TEDxAUEB, TEDxAdventure, pre-event, tedxaueb pre-event, tedxaueb adventure, tedxaueb 2025, tedxaueb unlucky, tedxaueb pre-event 2025">
     <meta name="author" content="TEDxAUEB">
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header-footer.css">
@@ -22,7 +21,11 @@
     <link rel="stylesheet" href="styles/fonts/rocafont/rocafont.css">
     <!-- Font Awesome CDN link -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <!-- GSAP CDN link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Script -->
     <script src="js/pawprints.js"></script>
     <script src="js/marquee.js" defer></script>
@@ -31,12 +34,12 @@
     <script src="js/cat-eyes.js"></script>
     <script src="js/entry-transition.js"></script>
     <script src="js/toggle.js" defer></script>
+    <script src="js/text-animation.js"></script>
 </head>
 
 <body>
     <div class="overlay">
-        <svg class="circle-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 110"
-            preserveAspectRatio="xMidYMid slice">
+        <svg class="circle-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 110" preserveAspectRatio="xMidYMid slice">
             <defs>
                 <mask id="circle-mask">
                     <!-- Black background for the mask -->
@@ -145,8 +148,8 @@
             <img class="ladder" src="styles/images/tallladder.png" alt="tall yellow ladder">
             <div>
                 <section class="desc">
-                    <h2>Προκαταλήψεις και Ατυχία</h2>
-                    <p>
+                    <h2 class="animated-text">Προκαταλήψεις και Ατυχία</h2>
+                    <p class="animated-text">
                         Από μικρά παιδιά μας μαθαίνουν για την ατυχία. Να μην περνάμε κάτω από σκάλες, να προσέχουμε τις μαύρες
                         γάτες και ότι αν σπάσουμε κάποιον καθρέφτη μας περιμένουν εφτά δύσκολα χρόνια. Αυτές και άλλες
                         πολλές προκαταλήψεις είναι που κυριαρχούν στις ζωές μας, ενώ εμείς τις ακολουθούμε πιστά προκειμένου να
@@ -155,8 +158,8 @@
                 </section>
 
                 <section class="desc">
-                    <h2>Τυχαιότητα vs. Επιλογές</h2>
-                    <p>
+                    <h2 class="animated-text">Τυχαιότητα vs. Επιλογές</h2>
+                    <p class="animated-text">
                         Όμως ποια πράγματα οφείλονται πραγματικά στην τυχαιότητα και ποια είναι αποτελέσματα των δικών
                         μας πράξεων; Ποια πράγματα μας επιβάλλονται από κάτι που μας ξεπερνάει και σε τι καταδικάζουμε εμείς
                         οι ίδιοι τον εαυτό μας πιστεύοντας ότι αυτή είναι η μοίρα μας;
@@ -164,16 +167,16 @@
                 </section>
 
                 <section class="desc">
-                    <h2>Η Τύχη ως Δικαιολογία</h2>
-                    <p>
+                    <h2 class="animated-text">Η Τύχη ως Δικαιολογία</h2>
+                    <p class="animated-text">
                         Πότε χρησιμοποιούμε την τύχη σαν μία δικαιολογία για να αγνοήσουμε την ευθύνη που έχουμε σε
                         γεγονότα που βαφτίζουμε “ατυχίες” των άλλων;
                     </p>
                 </section>
 
                 <section class="desc">
-                    <h2>Το TEDx Unlucky</h2>
-                    <p>
+                    <h2 class="animated-text">Το TEDx Unlucky</h2>
+                    <p class="animated-text">
                         Αυτά είναι τα ερωτήματα που θα προσπαθήσουμε να απαντήσουμε στο TEDx Unlucky, τιμώντας την 13η
                         συνεχόμενη χρονιά των TEDxAUEB events.
                     </p>
@@ -209,7 +212,7 @@
                 <h2 class="title">Host</h2>
                 <h3>Γιώργος Ντάβος</h3>
                 <img id="host" src="styles/images/host-img.png" alt="host photo giorgos davos">
-                <p>Ο 25χρονος Γιώργος Ντάβος είναι ένας πολυτάλαντος ηθοποιός, performer και φυσικά… TikToker!
+                <p class="animated-text">Ο 25χρονος Γιώργος Ντάβος είναι ένας πολυτάλαντος ηθοποιός, performer και φυσικά… TikToker!
                     Με αξιοσημείωτες εμφανίσεις σε θεατρικές παραστάσεις και τηλεοπτικές παραγωγές, εργάζεται στον χώρο
                     του θεάματος… κυριολεκτικά από τότε που θυμάται τον εαυτό του! <br>
                     Αυτό που τον ξεχωρίζει είναι η δημιουργικότητά του στο TikTok, όπου με τα ευφάνταστα σκετσάκια του
@@ -322,22 +325,22 @@
         <!-- Workshops Section -->
         <section class="workshops">
             <div class="desc">
-                <h2 class="title">Workshops</h2>
+                <h2 class="title animated-text">Workshops</h2>
                 <div class="workshops-list">
                     <div class="workshop">
-                        <h3>Improv Theater: Βρίσκοντας το fun σου στην Τύχη και την Ατυχία</h3>
+                        <h3 class="animated-text">Improv Theater: Βρίσκοντας το fun σου στην Τύχη και την Ατυχία</h3>
                         <img class="w-img" src="styles/images/workshops/IMPROVIBE.png" alt="ImproVIBE Workshop">
-                        <p>Η ImproVIBE, η πρώτη σχολή Αυτοσχεδιαστικού Θεάτρου (Improv Theater) στην Αθήνα, έρχεται να
+                        <p class="animated-text">Η ImproVIBE, η πρώτη σχολή Αυτοσχεδιαστικού Θεάτρου (Improv Theater) στην Αθήνα, έρχεται να
                             μας μυήσει στη μαγεία του improv!
                             Μέσα από αυτό το διαδραστικό workshop, θα εξερευνήσουμε πώς να μετατρέπουμε τις "ατυχίες" σε
                             ευκαιρίες δημιουργίας και γέλιου.
                             Θα γελάσουμε, θα αυτοσχεδιάσουμε και θα ανακαλύψουμε την ελευθερία του αυθορμητισμού μας!
                         </p>
                         <div class="toggle-btn">
-                            <h4>Workshop Description</h4>
+                            <h4 class="animated-text">Workshop Description</h4>
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <p class="toggle-p">Πώς μπορείς να μετατρέψεις ένα "unlucky" γεγονός σε κάτι διασκεδαστικό και
+                        <p class="toggle-p animated-text">Πώς μπορείς να μετατρέψεις ένα "unlucky" γεγονός σε κάτι διασκεδαστικό και
                             γεμάτο ενέργεια; Ʃε αυτό το διαδραστικό σεμινάριο, θα εξερευνήσουμε τη
                             μαγεία του improv theater και το πώς μας βοηθά να απελευθερώσουμε τον
                             αυθορμητισμό μας. Θα ανακαλύψουμε πώς να παίρνουμε δυναμικές αποφάσεις
@@ -351,10 +354,10 @@
                             θέλεις να δεις την "ατυχία" με μια εντελώς νέα ματιά!
                         </p>
                         <div class="toggle-btn">
-                            <h4>About ImproVIBE</h4>
+                            <h4 class="animated-text">About ImproVIBE</h4>
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                        <p class="toggle-p">Η ImproVIBE είναι η πρώτη σχολή Αυτοσχεδιαστικού Θεάτρου Improv Theater
+                        <p class="toggle-p animated-text">Η ImproVIBE είναι η πρώτη σχολή Αυτοσχεδιαστικού Θεάτρου Improv Theater
                             στην Αθήνα. Ιδρύθηκε το 2012 από τον Μενέλαο Πρόκο και μέχρι σήμερα
                             μεγαλώνει σταθερά και προσφέρει μαθήματα Improv σε καλλιτεχνικό αλλά και
                             σε πλαίσιο προσωπικής εξέλιξης.
@@ -376,9 +379,9 @@
                         </p>
                     </div>
                     <div class="workshop">
-                        <h3>Q&A με την Σχεδία</h3>
+                        <h3 class="animated-text">Q&A με την Σχεδία</h3>
                         <img class="w-img" src="styles/images/workshops/SHEDIA.png" alt="QnA Shedia">
-                        <p>Η Σχεδία, το περιοδικό δρόμου που αλλάζει ζωές, μας εμπνέει μέσα από μια ανοιχτή συζήτηση με
+                        <p class="animated-text">Η Σχεδία, το περιοδικό δρόμου που αλλάζει ζωές, μας εμπνέει μέσα από μια ανοιχτή συζήτηση με
                             τον ιδρυτή της, Χρήστο Αλεφάντη.
                             Θα έχουμε την ευκαιρία να ακούσουμε την ιστορία πίσω από τη Σχεδία, να μάθουμε για την
                             κοινωνική της δράση και να θέσουμε τις δικές μας ερωτήσεις,
@@ -615,8 +618,8 @@
     <footer>
         <div class="top-footer">
             <div class="footer-left">
-                <h1>Unlucky</h1>
-                <p>Cross your fingers</p>
+                <h1 class="animated-text">Unlucky</h1>
+                <p class="animated-text">Cross your fingers</p>
                 <div class="social-icons">
                     <a href="https://web.facebook.com/profile.php?id=100064622322785" target="_blank" class="social-icon">
                         <i class="fab fa-facebook-f"></i> <!-- Facebook Icon -->
