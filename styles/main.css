@@ -436,6 +436,11 @@ section {
     align-items: center;
 }
 
+.org-photo {
+    max-width: 100%;
+    max-height: 600px;
+}
+
 /* Media Queries for Responsiveness */
 
 /* Tablet */

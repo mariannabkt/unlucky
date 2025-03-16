@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Center the selected thumbnail
     function centerThumbnail(index) {
-        console.log('Centering thumbnail at index:', index);
         const thumbnailItem = thumbnailitems[0];
         const thumbnailWidth = thumbnailItem.offsetWidth + 10;
         const containerWidth = thumbnails.offsetWidth;
